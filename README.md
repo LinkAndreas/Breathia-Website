@@ -72,37 +72,29 @@ Add it to `languages` in `content/site.js`, create `content/locales/<code>.js` a
 
 ### Hostinger VPS (GitHub Actions + Docker)
 
-The image builds the site and serves it with [Caddy](https://caddyserver.com) on port **32772**:
-compression, caching and security headers are configured in `docker/Caddyfile`. HTTPS and the domain
-come from the reverse proxy on the VPS — the same setup as TerraDelta.
+The image builds the site and serves it with [Caddy](https://caddyserver.com) on
+`localhost:32772`: compression, caching and security headers are configured in `docker/Caddyfile`.
+The port isn't reachable from outside; a Cloudflare Tunnel on the VPS provides the domain and
+HTTPS.
 
 1. **Create a VPS** in hPanel with the **Docker / Ubuntu** template (or install Docker:
    `curl -fsSL https://get.docker.com | sh`).
 2. **Automate deployment via GitHub Actions.** In the repository, go to
    **Settings › Secrets and variables › Actions** and add:
    - Secrets: `HOSTINGER_HOST` (VPS IP address), `HOSTINGER_USERNAME` (SSH user, e.g. `root`),
-     `HOSTINGER_SSH_KEY` (private SSH key)
+     `HOSTINGER_SSH_KEY` (private key of a dedicated deploy key, authorized on the VPS)
    - Variable: `SITE_URL` — the public URL with a trailing slash, e.g. `https://breathia.example.com/`
 
-   Every push to `main` (each release) runs `.github/workflows/deploy.yml`: it copies the project
+   Every merge into `main` (each release) runs `.github/workflows/deploy.yml`: it copies the project
    to `~/breathia-website` and runs `docker compose up -d --build`. It can also be started by hand
    under **Actions › Deploy to Hostinger VPS › Run workflow**.
-3. **Point your domain and add HTTPS.** Map the domain to `127.0.0.1:32772` in your reverse proxy
-   (Hostinger's panel, or Nginx + Certbot). Minimal Nginx site:
+3. **Route the domain through the Cloudflare Tunnel.** In Cloudflare **Zero Trust › Networks ›
+   Tunnels**, edit the tunnel running on the VPS (a `cloudflared` container with host networking)
+   and add a public hostname: your subdomain and domain, service **HTTP**, URL `localhost:32772`.
+   Cloudflare creates the DNS record and serves HTTPS.
 
-   ```nginx
-   server {
-     server_name breathia.example.com;
-     location / {
-       proxy_pass http://127.0.0.1:32772;
-       proxy_set_header Host $host;
-       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-       proxy_set_header X-Forwarded-Proto $scheme;
-     }
-   }
-   ```
-
-   Then `sudo certbot --nginx -d breathia.example.com` for the certificate.
+   Without Cloudflare, put any reverse proxy on the VPS in front of `127.0.0.1:32772` instead
+   (for example Caddy or Nginx + Certbot).
 
 To run it locally: `docker compose up -d --build` → <http://localhost:32772>.
 

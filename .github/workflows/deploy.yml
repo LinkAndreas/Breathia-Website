@@ -1,8 +1,8 @@
 name: Deploy to Hostinger VPS
 
 # Same approach as TerraDelta: copy the repository to the VPS and build it there with Docker
-# Compose. The website then listens on port 32772; the reverse proxy on the VPS maps the domain
-# (with HTTPS) to it.
+# Compose. The website then listens on localhost:32772; the Cloudflare Tunnel on the VPS maps the
+# domain (with HTTPS) to it.
 #
 # Repository secrets: HOSTINGER_HOST, HOSTINGER_USERNAME, HOSTINGER_SSH_KEY
 # Repository variable (optional): SITE_URL, e.g. https://breathia.example.com/
