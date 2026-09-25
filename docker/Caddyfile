@@ -1,4 +1,4 @@
-# Serves the built website on port 8080 (plain HTTP). HTTPS and the domain are handled by the
+# Serves the built website on port 32772 (plain HTTP). HTTPS and the domain are handled by the
 # reverse proxy in front of it on the VPS.
 {
 	admin off
@@ -6,7 +6,7 @@
 	persist_config off
 }
 
-:8080 {
+:32772 {
 	root * /srv
 	encode zstd gzip
 
