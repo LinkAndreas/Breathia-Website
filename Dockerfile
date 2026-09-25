@@ -15,9 +15,8 @@ RUN npm run build \
   # Everything served must be world-readable for the unprivileged nginx user.
   && chmod -R a+rX dist
 
-# ---- Serve: static files from an unprivileged nginx -------------------------------------------
+# ---- Serve: static files from an unprivileged nginx (default config, port 8080) ---------------
 FROM nginxinc/nginx-unprivileged:1.27-alpine
-COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist /usr/share/nginx/html
 
 EXPOSE 8080
