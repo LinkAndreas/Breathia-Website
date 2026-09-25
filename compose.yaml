@@ -6,10 +6,7 @@
 
 services:
   breathia-website:
-    build:
-      context: .
-      args:
-        SITE_URL: ${SITE_URL:-https://www.linkandreas.de/breathia/}
+    build: .
     image: breathia-website:latest
     container_name: breathia-website
     ports:

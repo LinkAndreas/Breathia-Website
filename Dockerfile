@@ -8,8 +8,8 @@ COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
 
 COPY . .
-# Canonical URL baked into links, the sitemap and robots.txt (trailing slash optional).
-ARG SITE_URL=https://www.linkandreas.de/breathia/
+# The canonical URL comes from content/site.js; pass --build-arg SITE_URL=… to override it.
+ARG SITE_URL=
 ENV SITE_URL=${SITE_URL}
 RUN npm run build \
   # Everything served must be world-readable.
