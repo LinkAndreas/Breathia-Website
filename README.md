@@ -70,30 +70,41 @@ Add it to `languages` in `content/site.js`, create `content/locales/<code>.js` a
 
 ## Deploying
 
-### Docker (Hostinger VPS or any Linux server)
+### Hostinger VPS (GitHub Actions + Docker)
 
-The image builds the site and serves it from an unprivileged nginx with its default configuration.
-`compose.yaml` adds [Caddy](https://caddyserver.com) in front for automatic HTTPS via Let's Encrypt,
-compression, caching and security headers (`docker/Caddyfile`).
+The image builds the site and serves it with [Caddy](https://caddyserver.com) on port **32772**:
+compression, caching and security headers are configured in `docker/Caddyfile`. HTTPS and the domain
+come from the reverse proxy on the VPS — the same setup as TerraDelta.
 
-1. Point your domain's DNS **A** (and **AAAA**) record — and `www.` if you want it — to the VPS IP.
-2. On the VPS (Docker and the Compose plugin installed), copy or clone this project, then:
+1. **Create a VPS** in hPanel with the **Docker / Ubuntu** template (or install Docker:
+   `curl -fsSL https://get.docker.com | sh`).
+2. **Automate deployment via GitHub Actions.** In the repository, go to
+   **Settings › Secrets and variables › Actions** and add:
+   - Secrets: `HOSTINGER_HOST` (VPS IP address), `HOSTINGER_USERNAME` (SSH user, e.g. `root`),
+     `HOSTINGER_SSH_KEY` (private SSH key)
+   - Variable: `SITE_URL` — the public URL with a trailing slash, e.g. `https://breathia.example.com/`
 
-   ```bash
-   cp .env.example .env    # set DOMAIN and SITE_URL
-   docker compose up -d --build
+   Every push to `main` (each release) runs `.github/workflows/deploy.yml`: it copies the project
+   to `~/breathia-website` and runs `docker compose up -d --build`. It can also be started by hand
+   under **Actions › Deploy to Hostinger VPS › Run workflow**.
+3. **Point your domain and add HTTPS.** Map the domain to `127.0.0.1:32772` in your reverse proxy
+   (Hostinger's panel, or Nginx + Certbot). Minimal Nginx site:
+
+   ```nginx
+   server {
+     server_name breathia.example.com;
+     location / {
+       proxy_pass http://127.0.0.1:32772;
+       proxy_set_header Host $host;
+       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+       proxy_set_header X-Forwarded-Proto $scheme;
+     }
+   }
    ```
 
-3. Open ports 80 and 443 in the VPS firewall (Hostinger hPanel › VPS › Firewall, and `ufw` if used).
+   Then `sudo certbot --nginx -d breathia.example.com` for the certificate.
 
-Caddy requests the certificate on first start. To update the site, pull the new version and run
-`docker compose up -d --build` again. Logs: `docker compose logs -f`.
-
-Already running a reverse proxy (Traefik, Nginx Proxy Manager, another Caddy)? Remove the `caddy`
-service from `compose.yaml`, point the proxy at the `web` container, port `8080`, and carry over the
-headers and the trailing-slash redirect from `docker/Caddyfile`.
-
-Build on the VPS itself: it is `linux/amd64`, while a Mac builds `arm64` images by default.
+To run it locally: `docker compose up -d --build` → <http://localhost:32772>.
 
 ### Anywhere else
 

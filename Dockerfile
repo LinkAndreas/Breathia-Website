@@ -12,12 +12,13 @@ COPY . .
 ARG SITE_URL=https://www.linkandreas.de/breathia/
 ENV SITE_URL=${SITE_URL}
 RUN npm run build \
-  # Everything served must be world-readable for the unprivileged nginx user.
+  # Everything served must be world-readable.
   && chmod -R a+rX dist
 
-# ---- Serve: static files from an unprivileged nginx (default config, port 8080) ---------------
-FROM nginxinc/nginx-unprivileged:1.27-alpine
-COPY --from=build /app/dist /usr/share/nginx/html
+# ---- Serve: static files from Caddy (headers, caching, compression in docker/Caddyfile) --------
+FROM caddy:2-alpine
+COPY docker/Caddyfile /etc/caddy/Caddyfile
+COPY --from=build /app/dist /srv
 
 EXPOSE 8080
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
