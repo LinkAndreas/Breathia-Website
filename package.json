@@ -1,0 +1,23 @@
+{
+  "name": "breathia-site",
+  "private": true,
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "Marketing website for Breathia \u2014 guided breathing with live heart-rate and HRV biofeedback.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "render": "node scripts/render.mjs",
+    "sync": "node scripts/sync-app-content.mjs",
+    "images": "node scripts/build-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4",
+    "vite": "^8.3.1"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
+  }
+}
