@@ -72,9 +72,9 @@ Add it to `languages` in `content/site.js`, create `content/locales/<code>.js` a
 
 ### Docker (Hostinger VPS or any Linux server)
 
-The image builds the site and serves it from an unprivileged nginx (gzip, long-lived caching for
-hashed assets, security headers). `compose.yaml` adds [Caddy](https://caddyserver.com) in front for
-automatic HTTPS via Let's Encrypt.
+The image builds the site and serves it from an unprivileged nginx with its default configuration.
+`compose.yaml` adds [Caddy](https://caddyserver.com) in front for automatic HTTPS via Let's Encrypt,
+compression, caching and security headers (`docker/Caddyfile`).
 
 1. Point your domain's DNS **A** (and **AAAA**) record — and `www.` if you want it — to the VPS IP.
 2. On the VPS (Docker and the Compose plugin installed), copy or clone this project, then:
@@ -90,7 +90,8 @@ Caddy requests the certificate on first start. To update the site, pull the new 
 `docker compose up -d --build` again. Logs: `docker compose logs -f`.
 
 Already running a reverse proxy (Traefik, Nginx Proxy Manager, another Caddy)? Remove the `caddy`
-service from `compose.yaml` and point the proxy at the `web` container, port `8080`.
+service from `compose.yaml`, point the proxy at the `web` container, port `8080`, and carry over the
+headers and the trailing-slash redirect from `docker/Caddyfile`.
 
 Build on the VPS itself: it is `linux/amd64`, while a Mac builds `arm64` images by default.
 
