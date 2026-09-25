@@ -81,9 +81,11 @@ HTTPS.
    `curl -fsSL https://get.docker.com | sh`).
 2. **Automate deployment via GitHub Actions.** In the repository, go to
    **Settings › Secrets and variables › Actions** and add:
-   - Secrets: `HOSTINGER_HOST` (VPS IP address), `HOSTINGER_USERNAME` (SSH user, e.g. `root`),
-     `HOSTINGER_SSH_KEY` (private key of a dedicated deploy key, authorized on the VPS)
-   - Variable: `SITE_URL` — the public URL with a trailing slash, e.g. `https://breathia.example.com/`
+   - `HOSTINGER_HOST` — VPS IP address
+   - `HOSTINGER_USERNAME` — SSH user, e.g. `root`
+   - `HOSTINGER_SSH_KEY` — private key of a dedicated deploy key, authorized on the VPS
+
+   The public URL used for canonical links, the sitemap and `robots.txt` is set in `content/site.js`.
 
    Every merge into `main` (each release) runs `.github/workflows/deploy.yml`: it copies the project
    to `~/breathia-website` and runs `docker compose up -d --build`. It can also be started by hand
