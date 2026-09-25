@@ -1,18 +1,16 @@
-# HTTPS in front of the website container. Caddy obtains and renews the certificate for
-# {$DOMAIN} automatically; the domain's DNS A/AAAA records must point to this VPS.
-{$DOMAIN} {
+# Serves the built website on port 8080 (plain HTTP). HTTPS and the domain are handled by the
+# reverse proxy in front of it on the VPS.
+{
+	admin off
+	auto_https off
+	persist_config off
+}
+
+:8080 {
+	root * /srv
 	encode zstd gzip
 
-	# Directory URLs without a trailing slash (e.g. /privacy/en, as linked from the app) get one
-	# here, so the redirect keeps the public host instead of the container's port.
-	@noSlash {
-		not path */
-		not path_regexp \.[a-zA-Z0-9]+$
-	}
-	redir @noSlash {path}/ 308
-
 	header {
-		Strict-Transport-Security "max-age=31536000; includeSubDomains"
 		X-Content-Type-Options "nosniff"
 		X-Frame-Options "DENY"
 		Referrer-Policy "strict-origin-when-cross-origin"
@@ -21,7 +19,7 @@
 		-Server
 	}
 
-	# Vite's hashed bundles never change; pages always revalidate.
+	# Vite's hashed bundles never change; images revalidate weekly; pages always revalidate.
 	@hashed path /assets/*
 	header @hashed Cache-Control "public, max-age=31536000, immutable"
 	@images path *.webp *.png *.svg
@@ -29,10 +27,12 @@
 	@pages path / */ *.html
 	header @pages Cache-Control "no-cache"
 
-	reverse_proxy web:8080
-}
+	# Also redirects directory URLs such as /privacy/en (linked from the app) to /privacy/en/.
+	file_server
 
-# Redirect the www variant to the main domain.
-www.{$DOMAIN} {
-	redir https://{$DOMAIN}{uri} permanent
+	# Unknown paths go to the home page.
+	handle_errors {
+		@notFound expression {err.status_code} == 404
+		redir @notFound / 302
+	}
 }
