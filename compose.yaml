@@ -1,5 +1,6 @@
 # Breathia website: a single Caddy container serving the static site on port 32772.
-# HTTPS and the domain come from the reverse proxy on the VPS (see README › Deploying).
+# The port is bound to localhost only: the domain and HTTPS come from the Cloudflare Tunnel (or
+# another reverse proxy) on the VPS, see README › Deploying.
 #
 #   docker compose up -d --build     # → http://localhost:32772
 
@@ -12,7 +13,7 @@ services:
     image: breathia-website:latest
     container_name: breathia-website
     ports:
-      - "32772:8080"
+      - "127.0.0.1:32772:8080"
     restart: unless-stopped
     read_only: true
     tmpfs:
