@@ -2,7 +2,7 @@
   "name": "breathia-site",
   "private": true,
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Marketing website for Breathia \u2014 guided breathing with live heart-rate and HRV biofeedback.",
   "type": "module",
   "scripts": {
