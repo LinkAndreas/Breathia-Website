@@ -1,0 +1,43 @@
+name: Deploy to Hostinger VPS
+
+# Same approach as TerraDelta: copy the repository to the VPS and build it there with Docker
+# Compose. The website then listens on port 32772; the reverse proxy on the VPS maps the domain
+# (with HTTPS) to it.
+#
+# Repository secrets: HOSTINGER_HOST, HOSTINGER_USERNAME, HOSTINGER_SSH_KEY
+# Repository variable (optional): SITE_URL, e.g. https://breathia.example.com/
+
+on:
+  workflow_dispatch:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Copy files to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USERNAME }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          source: "."
+          target: "~/breathia-website"
+
+      - name: Build and Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USERNAME }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          script: |
+            cd ~/breathia-website
+            export SITE_URL="${{ vars.SITE_URL }}"
+            docker compose up -d --build
