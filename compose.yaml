@@ -1,10 +1,12 @@
-# Breathia website on a VPS: nginx serves the static site, Caddy adds HTTPS (Let's Encrypt).
+# Breathia website on a VPS: nginx serves the static site, Caddy adds HTTPS (Let's Encrypt),
+# security headers, caching and compression.
 #
 #   cp .env.example .env      # set DOMAIN and SITE_URL
 #   docker compose up -d --build
 #
-# Already running a reverse proxy (Traefik, Nginx Proxy Manager, …)? Remove the `caddy` service
-# and point your proxy at the `web` container on port 8080 (or uncomment its `ports`).
+# Already running a reverse proxy (Traefik, Nginx Proxy Manager, …)? Remove the `caddy` service,
+# point your proxy at the `web` container on port 8080 (or uncomment its `ports`), and carry over
+# the headers and trailing-slash redirect from docker/Caddyfile.
 
 services:
   web:
