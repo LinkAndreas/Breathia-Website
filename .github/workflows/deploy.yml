@@ -5,7 +5,6 @@ name: Deploy to Hostinger VPS
 # domain (with HTTPS) to it.
 #
 # Repository secrets: HOSTINGER_HOST, HOSTINGER_USERNAME, HOSTINGER_SSH_KEY
-# Repository variable (optional): SITE_URL, e.g. https://breathia.example.com/
 
 on:
   workflow_dispatch:
@@ -39,5 +38,4 @@ jobs:
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
           script: |
             cd ~/breathia-website
-            export SITE_URL="${{ vars.SITE_URL }}"
             docker compose up -d --build
