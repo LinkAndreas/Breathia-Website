@@ -1,9 +1,16 @@
+name: breathia-website
+
 services:
   breathia-website:
-    build: .
-    image: breathia-website:latest
+    # Built by GitHub Actions (.github/workflows/deploy.yml); TAG is the commit SHA of the deploy.
+    image: ghcr.io/linkandreas/breathia-website:${TAG:-latest}
     container_name: breathia-website
-    ports:
-      # Localhost only: the Cloudflare Tunnel on the VPS (host network) serves it at your domain.
-      - "127.0.0.1:32772:32772"
+    # No published ports: the cloudflared container on the `web` network reaches it at
+    # http://breathia-website:32772 and serves it (with HTTPS) at the domain.
+    networks:
+      - web
     restart: unless-stopped
+
+networks:
+  web:
+    external: true
