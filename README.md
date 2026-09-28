@@ -72,10 +72,10 @@ Add it to `languages` in `content/site.js`, create `content/locales/<code>.js` a
 
 ### Hostinger VPS (GitHub Actions + Docker)
 
-The image builds the site and serves it with [Caddy](https://caddyserver.com) on
-`localhost:32772`: compression, caching and security headers are configured in `docker/Caddyfile`.
-The port isn't reachable from outside; a Cloudflare Tunnel on the VPS provides the domain and
-HTTPS.
+The image builds the site and serves it with [Caddy](https://caddyserver.com) on port 32772:
+compression, caching and security headers are configured in `docker/Caddyfile`. The container
+publishes no ports; it joins the shared Docker network `web` on the VPS, where the `cloudflared`
+container reaches it at `http://breathia-website:32772` and provides the domain and HTTPS.
 
 1. **Create a VPS** in hPanel with the **Docker / Ubuntu** template (or install Docker:
    `curl -fsSL https://get.docker.com | sh`).
@@ -87,18 +87,21 @@ HTTPS.
 
    The public URL used for canonical links, the sitemap and `robots.txt` is set in `content/site.js`.
 
-   Every merge into `main` (each release) runs `.github/workflows/deploy.yml`: it copies the project
-   to `~/breathia-website` and runs `docker compose up -d --build`. It can also be started by hand
-   under **Actions › Deploy to Hostinger VPS › Run workflow**.
-3. **Route the domain through the Cloudflare Tunnel.** In Cloudflare **Zero Trust › Networks ›
-   Tunnels**, edit the tunnel running on the VPS (a `cloudflared` container with host networking)
-   and add a public hostname: your subdomain and domain, service **HTTP**, URL `localhost:32772`.
-   Cloudflare creates the DNS record and serves HTTPS.
+   Every merge into `main` (each release) runs `.github/workflows/deploy.yml`: GitHub builds the
+   image and pushes it to `ghcr.io/linkandreas/breathia-website`, tagged with the commit SHA. The VPS
+   then only receives `compose.yaml` in `~/breathia-website`, pulls that image and restarts the
+   container. It can also be started by hand under **Actions › Deploy to Hostinger VPS › Run
+   workflow**.
 
-   Without Cloudflare, put any reverse proxy on the VPS in front of `127.0.0.1:32772` instead
-   (for example Caddy or Nginx + Certbot).
+   To roll back, run on the VPS: `cd ~/breathia-website && TAG=<older commit sha> docker compose up -d`.
+3. **Route the domain through the Cloudflare Tunnel.** The `cloudflared` container must be attached
+   to the `web` network (`docker network create web` once). In Cloudflare **Zero Trust › Networks ›
+   Tunnels**, edit the tunnel and add a public hostname: your subdomain and domain, service
+   **HTTP**, URL `breathia-website:32772`. Cloudflare creates the DNS record and serves HTTPS.
 
-To run it locally: `docker compose up -d --build` → <http://localhost:32772>.
+To run it locally:
+`docker build -t breathia-website . && docker run --rm -p 32772:32772 breathia-website`
+→ <http://localhost:32772>.
 
 ### Anywhere else
 
