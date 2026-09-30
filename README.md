@@ -50,7 +50,10 @@ BREATHIA_APP=../../Swift/Breathia npm run images   # icons, OG image
 The screenshots on the site are composited into Apple's official product bezels
 (iPhone 17 Pro Max, Apple Watch Series 11 46 mm, MacBook Neo) by
 `scripts/build-images.mjs`, which finds each bezel's screen cutout and fits the screenshot to it.
-The finished mockups live in `public/images/devices/`.
+The finished mockups live in `public/images/devices/<language>/`, one set per language, so each
+page shows the app in its own language. English screenshots come from `Docs/Images/Screenshots` in
+the app repository, the other languages from a folder named after the language inside it
+(`Docs/Images/Screenshots/de`, …).
 
 The bezels are Apple Design Resources, licensed for mock-ups only: they must not be extracted or
 redistributed on their own, so they are **not** in this repository. To regenerate the mockups

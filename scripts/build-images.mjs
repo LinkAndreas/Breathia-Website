@@ -11,6 +11,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
+import { site } from '../content/site.js';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const appRepo = path.resolve(process.env.BREATHIA_APP ?? path.join(root, '../../Swift/Breathia'));
@@ -62,7 +63,10 @@ await sharp(Buffer.from(og)).png({ compressionLevel: 9 }).toFile(path.join(publi
 console.log('Images written to public/.');
 
 // ---------------------------------------------------------------------------------------------
-// Device mockups: each screenshot composited into Apple's official product bezel.
+// Device mockups: each screenshot composited into Apple's official product bezel, once per
+// language. The default language's screenshots are in Docs/Images/Screenshots itself, the other
+// languages' in a folder named after the language (Docs/Images/Screenshots/de, …); the mockups
+// go to public/images/devices/<language>.
 //
 // The bezels come from Apple Design Resources (developer.apple.com/design/resources) and are
 // licensed for mock-ups only — they must not be extracted or redistributed on their own. So the
@@ -73,6 +77,7 @@ console.log('Images written to public/.');
 
 const bezelDir = process.env.BEZELS;
 const devicesOut = path.join(root, 'public/images/devices');
+const languages = site.languages.map((l) => l.code);
 
 const devices = {
   iphone: {
@@ -155,7 +160,7 @@ async function composite(bezelFile, area, screenshotFile, outBase, widths) {
 }
 
 if (bezelDir) {
-  await mkdir(devicesOut, { recursive: true });
+  for (const lang of languages) await mkdir(path.join(devicesOut, lang), { recursive: true });
   // Devices whose bezel isn't mounted keep their existing mockups and manifest entry.
   const manifestFile = path.join(root, 'content/devices.json');
   const previous = existsSync(manifestFile) ? JSON.parse(await readFile(manifestFile, 'utf8')) : {};
@@ -168,13 +173,16 @@ if (bezelDir) {
     }
     const area = await screenArea(bezelFile);
     manifest[kind] = { width: area.bounds.width, height: area.bounds.height, widths: device.widths };
-    for (const name of device.screens) {
-      for (const scheme of device.schemes ?? ['light', 'dark']) {
-        const suffix = scheme ? `-${scheme}` : '';
-        await composite(bezelFile, area, path.join(screensIn, `${name}${suffix}.png`), path.join(devicesOut, `${name}${suffix}`), device.widths);
+    for (const lang of languages) {
+      const screens = lang === languages[0] ? screensIn : path.join(screensIn, lang);
+      for (const name of device.screens) {
+        for (const scheme of device.schemes ?? ['light', 'dark']) {
+          const suffix = scheme ? `-${scheme}` : '';
+          await composite(bezelFile, area, path.join(screens, `${name}${suffix}.png`), path.join(devicesOut, lang, `${name}${suffix}`), device.widths);
+        }
       }
     }
-    console.log(`${kind}: ${device.screens.length} mockups, screen ${area.screenWidth}×${area.screenHeight} at ${area.left},${area.top}`);
+    console.log(`${kind}: ${device.screens.length} mockups per language, screen ${area.screenWidth}×${area.screenHeight} at ${area.left},${area.top}`);
   }
   await writeFile(manifestFile, `${JSON.stringify(manifest, null, 2)}\n`);
 } else {
