@@ -354,7 +354,6 @@ export function renderHome(lang, t) {
             ${t.how.steps
               .map(
                 (step, i) => `<li class="step reveal">
-              <span class="step__num">${i + 1}</span>
               ${device(lang, 'iphone', ['iphone-breathe', 'iphone-session', 'iphone-historyDetail'][i], { alt: step.alt, className: 'device--sm' })}
               <h3>${step.title}</h3>
               <p>${step.body}</p>
