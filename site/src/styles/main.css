@@ -1093,7 +1093,6 @@ button {
 .steps {
   display: grid;
   gap: 4rem 2rem;
-  counter-reset: step;
 }
 @media (min-width: 900px) {
   .steps {
@@ -1104,18 +1103,6 @@ button {
   display: grid;
   justify-items: center;
   text-align: center;
-}
-.step__num {
-  display: grid;
-  place-items: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  margin-bottom: 1.75rem;
-  border-radius: 50%;
-  background: var(--ink);
-  color: var(--bg);
-  font-family: var(--font-rounded);
-  font-weight: 700;
 }
 .step h3 {
   margin-top: 2.25rem;
