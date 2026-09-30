@@ -27,13 +27,14 @@ const deviceSizes = {
 };
 
 /**
- * A screenshot inside its real device bezel (composited by scripts/build-images.mjs).
+ * A screenshot inside its real device bezel (composited by scripts/build-images.mjs), taken
+ * from the app running in the page's language.
  * `scheme: 'auto'` follows the visitor's light/dark appearance; the watch has a single one.
  */
-function device(kind, name, { alt, className = '', scheme = kind === 'watch' ? null : 'auto', eager = false }) {
+function device(lang, kind, name, { alt, className = '', scheme = kind === 'watch' ? null : 'auto', eager = false }) {
   const { width, height, widths } = devices[kind];
-  const set = (suffix) => widths.map((w) => `/images/devices/${name}${suffix}-${w}.webp ${w}w`).join(', ');
-  const fallback = (suffix) => `/images/devices/${name}${suffix}-${widths[0]}.webp`;
+  const set = (suffix) => widths.map((w) => `/images/devices/${lang}/${name}${suffix}-${w}.webp ${w}w`).join(', ');
+  const fallback = (suffix) => `/images/devices/${lang}/${name}${suffix}-${widths[0]}.webp`;
   const loading = eager ? ' fetchpriority="high"' : ' loading="lazy"';
   const sizesAttr = deviceSizes[kind];
   const img = (suffix) =>
@@ -215,7 +216,7 @@ export function renderHome(lang, t) {
 
         <div class="hero__stage">
           <div class="hero__sun" aria-hidden="true"></div>
-          ${device('iphone', 'iphone-session', { alt: t.hero.phoneAlt, className: 'hero__phone', eager: true })}
+          ${device(lang, 'iphone', 'iphone-session', { alt: t.hero.phoneAlt, className: 'hero__phone', eager: true })}
           <svg class="hero__waves" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true">
             <defs>
               <linearGradient id="wave-far" x1="0" y1="0" x2="0" y2="1">
@@ -270,7 +271,7 @@ export function renderHome(lang, t) {
           </header>
 
           <div class="bio">
-            ${device('iphone', 'iphone-session', { alt: t.bio.deviceAlt, className: 'bio__device reveal' })}
+            ${device(lang, 'iphone', 'iphone-session', { alt: t.bio.deviceAlt, className: 'bio__device reveal' })}
             <div class="bio__cards">
               ${t.bio.cards
                 .map(
@@ -354,7 +355,7 @@ export function renderHome(lang, t) {
               .map(
                 (step, i) => `<li class="step reveal">
               <span class="step__num">${i + 1}</span>
-              ${device('iphone', ['iphone-breathe', 'iphone-session', 'iphone-historyDetail'][i], { alt: step.alt, className: 'device--sm' })}
+              ${device(lang, 'iphone', ['iphone-breathe', 'iphone-session', 'iphone-historyDetail'][i], { alt: step.alt, className: 'device--sm' })}
               <h3>${step.title}</h3>
               <p>${step.body}</p>
             </li>`,
@@ -373,7 +374,7 @@ export function renderHome(lang, t) {
               <h2 class="section__title reveal" id="tech-title">${f(t.library.title)}</h2>
               <p class="section__lede reveal">${t.library.lede}</p>
             </header>
-            ${device('iphone', 'iphone-technique', { alt: t.library.phoneAlt, className: 'device--sm library-intro__phone reveal' })}
+            ${device(lang, 'iphone', 'iphone-technique', { alt: t.library.phoneAlt, className: 'device--sm library-intro__phone reveal' })}
           </div>
 
           <div class="library" data-library>
@@ -403,8 +404,8 @@ export function renderHome(lang, t) {
             </ul>
           </div>
           <div class="split__visual split__visual--duo reveal">
-            ${device('iphone', 'iphone-history', { alt: t.history.listAlt, className: 'device--sm' })}
-            ${device('iphone', 'iphone-historyDetail', { alt: t.history.detailAlt, className: 'device--sm duo__front' })}
+            ${device(lang, 'iphone', 'iphone-history', { alt: t.history.listAlt, className: 'device--sm' })}
+            ${device(lang, 'iphone', 'iphone-historyDetail', { alt: t.history.detailAlt, className: 'device--sm duo__front' })}
           </div>
         </div>
       </section>
@@ -424,9 +425,9 @@ export function renderHome(lang, t) {
                 <p>${t.everywhere.watchBody}</p>
               </div>
               <div class="watch-row">
-                ${device('watch', 'watch-list', { alt: t.everywhere.watchListAlt })}
-                ${device('watch', 'watch-session', { alt: t.everywhere.watchSessionAlt, className: 'device--watch-hero' })}
-                ${device('watch', 'watch-summary', { alt: t.everywhere.watchSummaryAlt })}
+                ${device(lang, 'watch', 'watch-list', { alt: t.everywhere.watchListAlt })}
+                ${device(lang, 'watch', 'watch-session', { alt: t.everywhere.watchSessionAlt, className: 'device--watch-hero' })}
+                ${device(lang, 'watch', 'watch-summary', { alt: t.everywhere.watchSummaryAlt })}
               </div>
             </article>
 
@@ -454,7 +455,7 @@ export function renderHome(lang, t) {
                 <h3>${t.everywhere.macTitle}</h3>
                 <p>${t.everywhere.macBody}</p>
               </div>
-              ${device('mac', 'mac-history', { alt: t.everywhere.macAlt, className: 'tile__device' })}
+              ${device(lang, 'mac', 'mac-history', { alt: t.everywhere.macAlt, className: 'tile__device' })}
             </article>
 
             <article class="tile tile--ipad reveal">
@@ -462,7 +463,7 @@ export function renderHome(lang, t) {
                 <h3>${t.everywhere.ipadTitle}</h3>
                 <p>${t.everywhere.ipadBody}</p>
               </div>
-              ${device('ipad', 'ipad-breathe', { alt: t.everywhere.ipadAlt, className: 'tile__device' })}
+              ${device(lang, 'ipad', 'ipad-breathe', { alt: t.everywhere.ipadAlt, className: 'tile__device' })}
             </article>
           </div>
         </div>

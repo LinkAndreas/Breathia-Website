@@ -41,7 +41,7 @@ export default {
     secondary: 'See how it works',
     meta: 'Free · No account · Works with or without a sensor',
     phoneAlt:
-      'A Breathia session on iPhone: a breathing circle reads Inhale 2, cycle 7 of Resonance Breathing, above live heart-rate and HRV charts and the note “HRV increasing”.',
+      'A Breathia session on iPhone: a breathing circle reads Inhale 2, cycle 7 of Resonance Breathing, above live heart-rate and HRV charts.',
   },
 
   glance: {
@@ -118,7 +118,7 @@ export default {
       {
         title: 'Choose a technique',
         body: 'Pick what you need right now — calm, sleep, focus or energy — or search by name. Connect your strap from the toolbar.',
-        alt: 'The Breathe tab listing techniques by category, with filters and a connected sensor showing 72 BPM.',
+        alt: 'The Breathe tab listing techniques by category, with filters and a connected sensor showing the heart rate.',
       },
       {
         title: 'Breathe with the circle',
@@ -162,7 +162,7 @@ export default {
     watchTitle: 'Apple Watch',
     watchBody: 'Breathe right from your wrist, guided by gentle taps, with your heart rate measured along the way. Sessions sync to History on iPhone.',
     watchListAlt: 'Technique list on Apple Watch.',
-    watchSessionAlt: 'A session on Apple Watch: Exhale 4, heart rate 66.',
+    watchSessionAlt: 'A session on Apple Watch: Exhale 2, with the heart rate above it.',
     watchSummaryAlt: 'Session summary on Apple Watch, syncing to History on iPhone.',
     liveTitle: 'Live Activity',
     liveBody: 'Follow your session on the Lock Screen and in the Dynamic Island. See how much time has passed, and pause or end without opening the app.',
