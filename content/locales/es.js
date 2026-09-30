@@ -40,7 +40,7 @@ export default {
     secondary: 'Descubre cómo funciona',
     meta: 'Gratis · Sin cuenta · Con o sin sensor',
     phoneAlt:
-      'Una sesión de Breathia en iPhone: el círculo de respiración muestra «Inhala 2», ciclo 7 de la respiración de resonancia, sobre gráficas en directo de frecuencia cardiaca y VFC y el aviso «VFC en aumento».',
+      'Una sesión de Breathia en iPhone: el círculo de respiración muestra «Inhala 2», ciclo 7 de la respiración de resonancia, sobre gráficas en directo de frecuencia cardiaca y VFC.',
   },
 
   glance: {
@@ -117,7 +117,7 @@ export default {
       {
         title: 'Elige una técnica',
         body: 'Escoge lo que necesitas ahora —calma, sueño, concentración o energía— o búscala por nombre. Vincula tu correa desde la barra de herramientas.',
-        alt: 'La pestaña Respirar con las técnicas por categoría, filtros y un sensor conectado que muestra 72 LPM.',
+        alt: 'La pestaña Respirar con las técnicas por categoría, filtros y un sensor conectado que muestra la frecuencia cardiaca.',
       },
       {
         title: 'Respira con el círculo',
@@ -161,7 +161,7 @@ export default {
     watchTitle: 'Apple Watch',
     watchBody: 'Respira desde tu muñeca con suaves vibraciones que te acompañan, mientras se mide tu frecuencia cardiaca. Las sesiones se sincronizan con el historial del iPhone.',
     watchListAlt: 'La lista de técnicas en Apple Watch.',
-    watchSessionAlt: 'Una sesión en Apple Watch: Exhala 4, frecuencia cardiaca 66.',
+    watchSessionAlt: 'Una sesión en Apple Watch: Exhala 2, con la frecuencia cardiaca encima.',
     watchSummaryAlt: 'El resumen de una sesión en Apple Watch, que se sincroniza con el historial del iPhone.',
     liveTitle: 'Actividad en directo',
     liveBody: 'Sigue tu sesión desde la pantalla de bloqueo y la Dynamic Island. Consulta el tiempo transcurrido y pausa o termina sin abrir la app.',

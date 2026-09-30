@@ -41,7 +41,7 @@ export default {
     secondary: 'Voir comment ça marche',
     meta: 'Gratuit · Sans compte · Avec ou sans capteur',
     phoneAlt:
-      'Une séance Breathia sur iPhone : le cercle de respiration affiche « Inspirez 2 », cycle 7 de la respiration de résonance, au-dessus de graphiques en direct de fréquence cardiaque et de VFC et de la mention « VFC en hausse ».',
+      'Une séance Breathia sur iPhone : le cercle de respiration affiche « Inspirez 2 », cycle 7 de la respiration de résonance, au-dessus de graphiques en direct de fréquence cardiaque et de VFC.',
   },
 
   glance: {
@@ -118,7 +118,7 @@ export default {
       {
         title: 'Choisissez une technique',
         body: 'Choisissez selon votre besoin du moment — calme, sommeil, concentration ou énergie — ou cherchez par nom. Associez votre ceinture depuis la barre d’outils.',
-        alt: 'L’onglet Respirer avec les techniques par catégorie, des filtres et un capteur connecté affichant 72 BPM.',
+        alt: 'L’onglet Respirer avec les techniques par catégorie, des filtres et un capteur connecté affichant la fréquence cardiaque.',
       },
       {
         title: 'Respirez avec le cercle',
@@ -162,7 +162,7 @@ export default {
     watchTitle: 'Apple Watch',
     watchBody: 'Respirez directement depuis votre poignet, au rythme de légères vibrations, pendant que votre fréquence cardiaque est mesurée. Les séances se synchronisent avec l’historique de l’iPhone.',
     watchListAlt: 'La liste des techniques sur Apple Watch.',
-    watchSessionAlt: 'Une séance sur Apple Watch : Expirez 4, fréquence cardiaque 66.',
+    watchSessionAlt: 'Une séance sur Apple Watch : Expirez 2, avec la fréquence cardiaque au-dessus.',
     watchSummaryAlt: 'Le résumé d’une séance sur Apple Watch, synchronisé avec l’historique de l’iPhone.',
     liveTitle: 'Activité en direct',
     liveBody: 'Suivez votre séance sur l’écran verrouillé et dans la Dynamic Island. Voyez le temps écoulé, mettez en pause ou terminez sans ouvrir l’app.',

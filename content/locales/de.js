@@ -40,7 +40,7 @@ export default {
     secondary: 'So funktioniert’s',
     meta: 'Kostenlos · Kein Konto · Mit oder ohne Sensor',
     phoneAlt:
-      'Eine Breathia-Sitzung auf dem iPhone: Der Atemkreis zeigt „Einatmen 2“, Zyklus 7 der Resonanzatmung, darunter Live-Diagramme zu Herzfrequenz und HRV und der Hinweis „HRV steigt“.',
+      'Eine Breathia-Sitzung auf dem iPhone: Der Atemkreis zeigt „Einatmen 2“, Zyklus 7 der Resonanzatmung, darunter Live-Diagramme zu Herzfrequenz und HRV.',
   },
 
   glance: {
@@ -117,7 +117,7 @@ export default {
       {
         title: 'Technik wählen',
         body: 'Such dir aus, was du gerade brauchst – Ruhe, Schlaf, Fokus oder Energie – oder suche nach Namen. Deinen Gurt koppelst du über die Symbolleiste.',
-        alt: 'Der Tab „Atmen“ mit Techniken nach Kategorien, Filtern und einem verbundenen Sensor, der 72 BPM anzeigt.',
+        alt: 'Der Tab „Atmen“ mit Techniken nach Kategorien, Filtern und einem verbundenen Sensor, der die Herzfrequenz anzeigt.',
       },
       {
         title: 'Mit dem Kreis atmen',
@@ -161,7 +161,7 @@ export default {
     watchTitle: 'Apple Watch',
     watchBody: 'Atme direkt am Handgelenk, begleitet von sanften Impulsen, während deine Herzfrequenz gemessen wird. Sitzungen landen im Verlauf auf dem iPhone.',
     watchListAlt: 'Die Technikliste auf Apple Watch.',
-    watchSessionAlt: 'Eine Sitzung auf Apple Watch: Ausatmen 4, Herzfrequenz 66.',
+    watchSessionAlt: 'Eine Sitzung auf Apple Watch: Ausatmen 2, darüber die Herzfrequenz.',
     watchSummaryAlt: 'Die Zusammenfassung einer Sitzung auf Apple Watch, die mit dem Verlauf auf dem iPhone synchronisiert wird.',
     liveTitle: 'Live-Aktivität',
     liveBody: 'Behalte deine Sitzung auf dem Sperrbildschirm und in der Dynamic Island im Blick. Sieh, wie viel Zeit vergangen ist, und pausiere oder beende sie, ohne die App zu öffnen.',
