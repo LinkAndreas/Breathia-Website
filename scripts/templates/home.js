@@ -1,4 +1,6 @@
 // The landing page, one per language.
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import { site } from '../../content/site.js';
 import { appStrings, categories, techniques } from '../../content/app.js';
 import devices from '../../content/devices.json' with { type: 'json' };
@@ -26,6 +28,17 @@ const deviceSizes = {
   wrist: '<path d="M12 20s-6.5-4.1-6.5-9.2A3.8 3.8 0 0 1 12 8.4a3.8 3.8 0 0 1 6.5 2.4C18.5 15.9 12 20 12 20z" /><path d="M7.5 12.5h2.2l1.2-2 1.6 3.5 1.1-1.5h2.9" />',
 };
 
+const publicDir = new URL('../../public', import.meta.url).pathname;
+
+/**
+ * `url` with a hash of the file's content, so a new screenshot gets a new URL: images are
+ * cached for a week by browsers and the CDN, while the pages always revalidate.
+ */
+function versioned(url) {
+  const hash = createHash('sha256').update(readFileSync(publicDir + url)).digest('hex').slice(0, 10);
+  return `${url}?v=${hash}`;
+}
+
 /**
  * A screenshot inside its real device bezel (composited by scripts/build-images.mjs), taken
  * from the app running in the page's language.
@@ -33,8 +46,8 @@ const deviceSizes = {
  */
 function device(lang, kind, name, { alt, className = '', scheme = kind === 'watch' ? null : 'auto', eager = false }) {
   const { width, height, widths } = devices[kind];
-  const set = (suffix) => widths.map((w) => `/images/devices/${lang}/${name}${suffix}-${w}.webp ${w}w`).join(', ');
-  const fallback = (suffix) => `/images/devices/${lang}/${name}${suffix}-${widths[0]}.webp`;
+  const set = (suffix) => widths.map((w) => `${versioned(`/images/devices/${lang}/${name}${suffix}-${w}.webp`)} ${w}w`).join(', ');
+  const fallback = (suffix) => versioned(`/images/devices/${lang}/${name}${suffix}-${widths[0]}.webp`);
   const loading = eager ? ' fetchpriority="high"' : ' loading="lazy"';
   const sizesAttr = deviceSizes[kind];
   const img = (suffix) =>
