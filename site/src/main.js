@@ -101,3 +101,25 @@ document.querySelectorAll('[data-theme-toggle]').forEach((button) =>
 );
 systemDark.addEventListener('change', applyTheme);
 applyTheme();
+
+// Live Activity illustration: a 5-minute session played back ten times faster, the elapsed time
+// following the bar. Without script or with reduced motion it stays at 1:30 of 5:00.
+const island = document.querySelector('[data-island]');
+if (island && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const bar = island.querySelector('[data-island-bar]');
+  const elapsedLabel = island.querySelector('[data-island-elapsed]');
+  const sessionSeconds = 300;
+  const speed = 10;
+  let shown = -1;
+  const tick = (now) => {
+    const elapsed = ((now / 1000) * speed) % sessionSeconds;
+    bar.style.width = `${(elapsed / sessionSeconds) * 100}%`;
+    const seconds = Math.floor(elapsed);
+    if (seconds !== shown) {
+      shown = seconds;
+      elapsedLabel.textContent = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
+    }
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
