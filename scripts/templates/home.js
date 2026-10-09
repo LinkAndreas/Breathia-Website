@@ -448,7 +448,7 @@ export function renderHome(lang, t) {
                 <h3>${t.everywhere.liveTitle}</h3>
                 <p>${t.everywhere.liveBody}</p>
               </div>
-              <div class="island" aria-hidden="true">
+              <div class="island" aria-hidden="true" data-island>
                 <div class="island__top">
                   <span class="island__name">${escapeHtml(techniques.find((x) => x.id === 'box').name[lang])}</span>
                   <span class="island__buttons">
@@ -456,8 +456,8 @@ export function renderHome(lang, t) {
                     <span class="island__btn island__btn--end"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" /></svg></span>
                   </span>
                 </div>
-                <div class="island__bar"><span></span></div>
-                <div class="island__times"><span>1:30</span><span>5:00</span></div>
+                <div class="island__bar"><span data-island-bar></span></div>
+                <div class="island__times"><span data-island-elapsed>1:30</span><span>5:00</span></div>
               </div>
               <p class="tile__note">${t.everywhere.liveNote}</p>
             </article>

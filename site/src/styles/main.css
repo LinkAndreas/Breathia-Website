@@ -1366,7 +1366,6 @@ button {
   width: 30%;
   border-radius: inherit;
   background: var(--tint);
-  animation: island-progress 30s linear infinite;
 }
 .island__times {
   display: flex;
@@ -1692,14 +1691,6 @@ button {
 @keyframes rsa-scroll {
   to {
     transform: translateX(-300px);
-  }
-}
-@keyframes island-progress {
-  from {
-    width: 8%;
-  }
-  to {
-    width: 100%;
   }
 }
 
