@@ -182,9 +182,18 @@ export default {
     pillars: [
       { title: 'Sur votre appareil', body: 'L’historique et les réglages restent sur vos appareils. Supprimez l’app, et ses données disparaissent avec elle.' },
       { title: 'Sans compte', body: 'Ouvrez l’app et respirez. Ni inscription, ni identifiant.' },
-      { title: 'Tout est gratuit', body: 'Toutes les fonctionnalités de Breathia sont gratuites. Les pourboires et abonnements facultatifs soutiennent son développement — ils ne débloquent rien.' },
+      { title: 'Tout est gratuit', body: 'Toutes les fonctionnalités de Breathia sont gratuites. Les pourboires et abonnements facultatifs soutiennent son développement ; les abonnés profitent en plus d’icônes d’app alternatives.' },
     ],
     link: 'Lire la politique de confidentialité',
+  },
+
+  icons: {
+    eyebrow: 'Icônes',
+    title: 'À votre image.',
+    lede: 'En remerciement, les soutiens peuvent choisir parmi sept autres icônes d’app — et sur iPhone et iPad, Breathia prend les couleurs de celle qu’ils choisissent.',
+    label: 'Icônes d’app',
+    names: { classic: 'Classique', amethyst: 'Améthyste', blush: 'Rose poudré', ember: 'Braise', glacier: 'Glacier', lagoon: 'Lagon', midnightGold: 'Or de minuit', noir: 'Noir' },
+    note: 'Classique est gratuite pour tous. Les autres icônes accompagnent le soutien mensuel ou annuel, tant qu’il est actif. Toutes les fonctionnalités de Breathia restent gratuites dans tous les cas.',
   },
 
   cta: {
