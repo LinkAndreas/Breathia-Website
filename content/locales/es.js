@@ -4,7 +4,7 @@ export default {
   meta: {
     title: 'Breathia — Respiración guiada con biofeedback cardiaco en directo',
     description:
-      'Breathia te guía por {count} técnicas de respiración en iPhone, iPad, Mac y Apple Watch, y te muestra en directo cómo responden tu frecuencia cardiaca y tu VFC con una correa pectoral Bluetooth como la Polar H10. Gratis, privada y sin cuenta.',
+      'Breathia te guía por {count} técnicas de respiración en iPhone, iPad, Mac y Apple Watch, y te muestra en directo cómo responden tu frecuencia cardiaca y tu VFC con un sensor de frecuencia cardiaca Bluetooth como la Polar H10. Gratis, privada y sin cuenta.',
     ogTitle: 'Breathia — Respira más despacio. Tu corazón te sigue.',
     ogDescription:
       'Respiración guiada con información en directo de tu frecuencia cardiaca y tu VFC. {count} técnicas para iPhone, iPad, Mac y Apple Watch.',
@@ -68,13 +68,13 @@ export default {
   bio: {
     eyebrow: 'Biofeedback en directo',
     title: 'Mira cómo tu corazón se acompasa<br class="br-lg" /> a tu respiración.',
-    lede: 'Ponte una correa pectoral Bluetooth y Breathia te mostrará cómo cambian tu frecuencia cardiaca y su variabilidad mientras respiras: en directo, latido a latido.',
+    lede: 'Ponte un sensor de frecuencia cardiaca Bluetooth y Breathia te mostrará cómo cambian tu frecuencia cardiaca y su variabilidad mientras respiras: en directo, latido a latido.',
     deviceAlt:
       'Una sesión de respiración de resonancia en curso en iPhone: el círculo de respiración, el progreso de la sesión, la tendencia actual de la VFC y gráficas en directo de frecuencia cardiaca y VFC (RMSSD).',
     cards: [
       {
         title: 'Frecuencia cardiaca y VFC en directo',
-        body: 'Ambos valores se actualizan con cada latido, a partir de los intervalos latido a latido (RR) que envía tu correa. Elige la medida de VFC que prefieras: RMSSD o SDNN.',
+        body: 'Ambos valores se actualizan con cada latido, a partir de los intervalos latido a latido (RR) que envía tu sensor. Elige la medida de VFC que prefieras: RMSSD o SDNN.',
       },
       {
         title: 'La tendencia de un vistazo',
@@ -94,20 +94,20 @@ export default {
 
   sensors: {
     eyebrow: 'Sensores',
-    title: 'Tu correa, vinculada en segundos.<br class="br-lg" /> O respira sin ella.',
+    title: 'Tu sensor, vinculado en segundos.<br class="br-lg" /> O respira sin él.',
     recommended: 'Recomendada',
     polarBody:
-      'Breathia está pensada para la Polar H10. Envía tu frecuencia cardiaca y los intervalos RR latido a latido para una VFC precisa. Humedece los electrodos, ponte la correa y aparecerá en Breathia en pocos segundos.',
-    bleTitle: 'Otras correas cardiacas Bluetooth',
+      'La Polar H10 es un buen ejemplo. Envía tu frecuencia cardiaca y los intervalos RR latido a latido para una VFC precisa. Humedece los electrodos, ponte la correa y aparecerá en Breathia en pocos segundos.',
+    bleTitle: 'Cualquier sensor de frecuencia cardiaca Bluetooth',
     bleBody:
-      'Cualquier correa que use el servicio Bluetooth estándar de frecuencia cardiaca muestra tu frecuencia cardiaca. Para la VFC, también tiene que enviar intervalos RR.',
+      'Cualquier correa pectoral o brazalete que use el servicio Bluetooth estándar de frecuencia cardiaca se vincula igual y muestra tu frecuencia cardiaca. Para la VFC, también tiene que enviar intervalos RR, como hacen las correas pectorales.',
     watchTitle: 'Apple Watch',
-    watchBody: 'Apple Watch mide tu frecuencia cardiaca durante la sesión, sin necesidad de correa.',
+    watchBody: 'Apple Watch mide tu frecuencia cardiaca durante la sesión, sin necesidad de sensor.',
     noneTitle: '¿Sin sensor? Sin problema.',
     noneBody:
       'Todas las técnicas funcionan sin sensor, y cada sesión sigue contando para tu historial y tus minutos de atención plena.',
     fineprint:
-      'Los sensores se conectan en iPhone, iPad y Mac. Breathia usa el Bluetooth solo para conectarse a tu correa cardiaca; no busca otros dispositivos ni recopila información sobre ellos.',
+      'Los sensores se conectan en iPhone, iPad y Mac. Breathia usa el Bluetooth solo para conectarse a tu sensor de frecuencia cardiaca; no busca otros dispositivos ni recopila información sobre ellos.',
   },
 
   how: {
@@ -116,7 +116,7 @@ export default {
     steps: [
       {
         title: 'Elige una técnica',
-        body: 'Escoge lo que necesitas ahora —calma, sueño, concentración o energía— o búscala por nombre. Vincula tu correa desde la barra de herramientas.',
+        body: 'Escoge lo que necesitas ahora —calma, sueño, concentración o energía— o búscala por nombre. Vincula tu sensor desde la barra de herramientas.',
         alt: 'La pestaña Respirar con las técnicas por categoría, filtros y un sensor conectado que muestra la frecuencia cardiaca.',
       },
       {
@@ -169,7 +169,7 @@ export default {
     ipadTitle: 'iPad',
     ipadBody: 'En la pantalla grande, las técnicas y sus detalles aparecen uno junto al otro, con la misma compatibilidad con sensores Bluetooth que en iPhone.',
     macTitle: 'Mac',
-    macBody: 'Una app nativa para Mac con señales sonoras suaves. Conecta las mismas correas Bluetooth y repasa cada sesión en el historial.',
+    macBody: 'Una app nativa para Mac con señales sonoras suaves. Conecta los mismos sensores Bluetooth y repasa cada sesión en el historial.',
     ipadAlt: 'Breathia en iPad: la lista de técnicas por categoría junto a los detalles de la respiración cuadrada.',
     macAlt: 'Breathia en el Mac: el historial con un informe de sesión —frecuencia cardiaca al inicio, de media y al final, y VFC en aumento—.',
   },
