@@ -181,9 +181,18 @@ export default {
     pillars: [
       { title: 'Auf deinem Gerät', body: 'Verlauf und Einstellungen bleiben auf deinen Geräten. Löschst du die App, sind auch ihre Daten weg.' },
       { title: 'Kein Konto', body: 'App öffnen und losatmen. Keine Registrierung, keine Anmeldung.' },
-      { title: 'Alle Funktionen kostenlos', body: 'Alles in Breathia ist kostenlos. Optionale Trinkgelder und Abos unterstützen die Entwicklung – freigeschaltet wird dadurch nichts.' },
+      { title: 'Alle Funktionen kostenlos', body: 'Alles in Breathia ist kostenlos. Optionale Trinkgelder und Abos unterstützen die Entwicklung; mit einem Abo gibt es außerdem alternative App-Symbole.' },
     ],
     link: 'Datenschutzerklärung lesen',
+  },
+
+  icons: {
+    eyebrow: 'App-Symbole',
+    title: 'Mach es zu deinem.',
+    lede: 'Als Dankeschön für Unterstützer gibt es sieben weitere App-Symbole – und auf iPhone und iPad nimmt Breathia die Farben des gewählten an.',
+    label: 'App-Symbole',
+    names: { classic: 'Klassisch', amethyst: 'Amethyst', blush: 'Zartrosa', ember: 'Glut', glacier: 'Gletscher', lagoon: 'Lagune', midnightGold: 'Mitternachtsgold', noir: 'Noir' },
+    note: 'Klassisch ist für alle kostenlos. Die anderen Symbole gehören zur monatlichen oder jährlichen Unterstützung, solange sie aktiv ist. Alle Funktionen von Breathia bleiben in jedem Fall kostenlos.',
   },
 
   cta: {

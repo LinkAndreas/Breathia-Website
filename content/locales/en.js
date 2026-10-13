@@ -182,9 +182,18 @@ export default {
     pillars: [
       { title: 'On your device', body: 'History and settings stay on your devices. Delete the app, and its data goes with it.' },
       { title: 'No account', body: 'Open the app and start breathing. No sign-up, no login.' },
-      { title: 'Every feature, free', body: 'Everything in Breathia is free. Optional tips and subscriptions support its development — they don’t unlock anything.' },
+      { title: 'Every feature, free', body: 'Everything in Breathia is free. Optional tips and subscriptions support its development; subscribers also get alternative app icons.' },
     ],
     link: 'Read the Privacy Policy',
+  },
+
+  icons: {
+    eyebrow: 'App icons',
+    title: 'Make it yours.',
+    lede: 'Supporters can choose from seven more app icons — and on iPhone and iPad, Breathia takes on the colors of the one they pick.',
+    label: 'App icons',
+    names: { classic: 'Classic', amethyst: 'Amethyst', blush: 'Blush', ember: 'Ember', glacier: 'Glacier', lagoon: 'Lagoon', midnightGold: 'Midnight Gold', noir: 'Noir' },
+    note: 'Classic is free for everyone. The other icons come with Monthly or Yearly Support, for as long as it’s active. Every feature of Breathia stays free either way.',
   },
 
   cta: {
