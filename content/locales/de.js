@@ -4,7 +4,7 @@ export default {
   meta: {
     title: 'Breathia – Geführtes Atmen mit Live-Biofeedback zu Herzfrequenz und HRV',
     description:
-      'Breathia begleitet dich auf iPhone, iPad, Mac und Apple Watch durch {count} Atemtechniken – und zeigt dir mit einem Bluetooth-Brustgurt wie dem Polar H10 live, wie Herzfrequenz und HRV reagieren. Kostenlos, privat und ohne Konto.',
+      'Breathia begleitet dich auf iPhone, iPad, Mac und Apple Watch durch {count} Atemtechniken – und zeigt dir mit einem Bluetooth-Herzfrequenzsensor wie dem Polar H10 live, wie Herzfrequenz und HRV reagieren. Kostenlos, privat und ohne Konto.',
     ogTitle: 'Breathia – Langsamer atmen. Dein Herz folgt.',
     ogDescription:
       'Geführtes Atmen mit Live-Feedback zu Herzfrequenz und HRV. {count} Techniken für iPhone, iPad, Mac und Apple Watch.',
@@ -68,13 +68,13 @@ export default {
   bio: {
     eyebrow: 'Live-Biofeedback',
     title: 'Sieh, wie sich dein Herz<br class="br-lg" /> auf deinen Atem einstellt.',
-    lede: 'Leg einen Bluetooth-Brustgurt an, und Breathia zeigt dir, wie sich Herzfrequenz und Herzfrequenzvariabilität beim Atmen verändern – live, Schlag für Schlag.',
+    lede: 'Leg einen Bluetooth-Herzfrequenzsensor an, und Breathia zeigt dir, wie sich Herzfrequenz und Herzfrequenzvariabilität beim Atmen verändern – live, Schlag für Schlag.',
     deviceAlt:
       'Eine laufende Sitzung Resonanzatmung auf dem iPhone: der Atemkreis, der Sitzungsfortschritt, der aktuelle HRV-Trend und Live-Diagramme zu Herzfrequenz und HRV (RMSSD).',
     cards: [
       {
         title: 'Herzfrequenz und HRV, live',
-        body: 'Beide Werte aktualisieren sich mit jedem Herzschlag – berechnet aus den Schlag-zu-Schlag-Intervallen (RR), die dein Gurt sendet. Als HRV-Maß wählst du RMSSD oder SDNN.',
+        body: 'Beide Werte aktualisieren sich mit jedem Herzschlag – berechnet aus den Schlag-zu-Schlag-Intervallen (RR), die dein Sensor sendet. Als HRV-Maß wählst du RMSSD oder SDNN.',
       },
       {
         title: 'Der Trend auf einen Blick',
@@ -94,20 +94,20 @@ export default {
 
   sensors: {
     eyebrow: 'Sensoren',
-    title: 'Dein Gurt, in Sekunden gekoppelt.<br class="br-lg" /> Oder ganz ohne.',
+    title: 'Dein Sensor, in Sekunden gekoppelt.<br class="br-lg" /> Oder ganz ohne.',
     recommended: 'Empfohlen',
     polarBody:
-      'Breathia ist auf den Polar H10 abgestimmt. Er liefert Herzfrequenz und Schlag-zu-Schlag-RR-Intervalle für eine genaue HRV. Elektroden befeuchten, Gurt anlegen – nach wenigen Sekunden erscheint er in Breathia.',
-    bleTitle: 'Andere Bluetooth-Herzfrequenzgurte',
+      'Der Polar H10 ist ein gutes Beispiel. Er liefert Herzfrequenz und Schlag-zu-Schlag-RR-Intervalle für eine genaue HRV. Elektroden befeuchten, Gurt anlegen – nach wenigen Sekunden erscheint er in Breathia.',
+    bleTitle: 'Jeder Bluetooth-Herzfrequenzsensor',
     bleBody:
-      'Jeder Gurt mit dem standardisierten Bluetooth-Herzfrequenzdienst zeigt deine Herzfrequenz an. Für die HRV muss er zusätzlich RR-Intervalle senden.',
+      'Jeder Brustgurt und jedes Armband mit dem standardisierten Bluetooth-Herzfrequenzdienst wird genauso gekoppelt und zeigt deine Herzfrequenz an. Für die HRV muss er zusätzlich RR-Intervalle senden, wie es Brustgurte tun.',
     watchTitle: 'Apple Watch',
-    watchBody: 'Apple Watch misst deine Herzfrequenz während der Sitzung – ganz ohne Gurt.',
+    watchBody: 'Apple Watch misst deine Herzfrequenz während der Sitzung – ganz ohne Sensor.',
     noneTitle: 'Kein Sensor? Kein Problem.',
     noneBody:
       'Jede Technik funktioniert auch ohne Sensor, und jede Sitzung zählt trotzdem für deinen Verlauf und deine Achtsamkeitsminuten.',
     fineprint:
-      'Sensoren lassen sich auf iPhone, iPad und Mac koppeln. Breathia nutzt Bluetooth nur für die Verbindung mit deinem Herzfrequenzgurt – es sucht nicht nach anderen Geräten und sammelt keine Informationen über sie.',
+      'Sensoren lassen sich auf iPhone, iPad und Mac koppeln. Breathia nutzt Bluetooth nur für die Verbindung mit deinem Herzfrequenzsensor – es sucht nicht nach anderen Geräten und sammelt keine Informationen über sie.',
   },
 
   how: {
@@ -116,7 +116,7 @@ export default {
     steps: [
       {
         title: 'Technik wählen',
-        body: 'Such dir aus, was du gerade brauchst – Ruhe, Schlaf, Fokus oder Energie – oder suche nach Namen. Deinen Gurt koppelst du über die Symbolleiste.',
+        body: 'Such dir aus, was du gerade brauchst – Ruhe, Schlaf, Fokus oder Energie – oder suche nach Namen. Deinen Sensor koppelst du über die Symbolleiste.',
         alt: 'Der Tab „Atmen“ mit Techniken nach Kategorien, Filtern und einem verbundenen Sensor, der die Herzfrequenz anzeigt.',
       },
       {
@@ -169,7 +169,7 @@ export default {
     ipadTitle: 'iPad',
     ipadBody: 'Auf dem großen Bildschirm stehen Techniken und ihre Details nebeneinander – mit derselben Bluetooth-Sensorunterstützung wie auf dem iPhone.',
     macTitle: 'Mac',
-    macBody: 'Eine native Mac-App mit sanften Klangsignalen. Verbinde dieselben Bluetooth-Gurte und blicke im Verlauf auf jede Sitzung zurück.',
+    macBody: 'Eine native Mac-App mit sanften Klangsignalen. Verbinde dieselben Bluetooth-Sensoren und blicke im Verlauf auf jede Sitzung zurück.',
     ipadAlt: 'Breathia auf dem iPad: die Technikliste nach Kategorien neben den Details der Box-Atmung.',
     macAlt: 'Breathia auf dem Mac: der Verlauf mit einem Sitzungsbericht – Herzfrequenz zu Beginn, im Schnitt und am Ende, dazu eine steigende HRV.',
   },

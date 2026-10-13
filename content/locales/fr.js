@@ -5,7 +5,7 @@ export default {
   meta: {
     title: 'Breathia — Respiration guidée avec biofeedback cardiaque en direct',
     description:
-      'Breathia vous guide à travers {count} techniques de respiration sur iPhone, iPad, Mac et Apple Watch, et vous montre en direct comment réagissent votre fréquence cardiaque et votre VFC grâce à une ceinture thoracique Bluetooth comme la Polar H10. Gratuit, privé et sans compte.',
+      'Breathia vous guide à travers {count} techniques de respiration sur iPhone, iPad, Mac et Apple Watch, et vous montre en direct comment réagissent votre fréquence cardiaque et votre VFC grâce à un capteur de fréquence cardiaque Bluetooth comme la Polar H10. Gratuit, privé et sans compte.',
     ogTitle: 'Breathia — Respirez plus lentement. Votre cœur suit.',
     ogDescription:
       'Respiration guidée avec un retour en direct sur votre fréquence cardiaque et votre VFC. {count} techniques pour iPhone, iPad, Mac et Apple Watch.',
@@ -69,13 +69,13 @@ export default {
   bio: {
     eyebrow: 'Biofeedback en direct',
     title: 'Voyez votre cœur s’accorder<br class="br-lg" /> à votre respiration.',
-    lede: 'Portez une ceinture thoracique Bluetooth, et Breathia vous montre comment votre fréquence cardiaque et sa variabilité évoluent pendant que vous respirez — en direct, battement par battement.',
+    lede: 'Portez un capteur de fréquence cardiaque Bluetooth, et Breathia vous montre comment votre fréquence cardiaque et sa variabilité évoluent pendant que vous respirez — en direct, battement par battement.',
     deviceAlt:
       'Une séance de respiration de résonance en cours sur iPhone : le cercle de respiration, la progression, la tendance actuelle de la VFC et des graphiques en direct de fréquence cardiaque et de VFC (RMSSD).',
     cards: [
       {
         title: 'Fréquence cardiaque et VFC en direct',
-        body: 'Les deux valeurs se mettent à jour à chaque battement, à partir des intervalles battement à battement (RR) transmis par votre ceinture. Choisissez l’indicateur de VFC qui vous convient : RMSSD ou SDNN.',
+        body: 'Les deux valeurs se mettent à jour à chaque battement, à partir des intervalles battement à battement (RR) transmis par votre capteur. Choisissez l’indicateur de VFC qui vous convient : RMSSD ou SDNN.',
       },
       {
         title: 'La tendance en un coup d’œil',
@@ -95,20 +95,20 @@ export default {
 
   sensors: {
     eyebrow: 'Capteurs',
-    title: 'Votre ceinture, associée en quelques secondes.<br class="br-lg" /> Ou respirez sans.',
+    title: 'Votre capteur, associé en quelques secondes.<br class="br-lg" /> Ou respirez sans.',
     recommended: 'Recommandé',
     polarBody:
-      'Breathia a été conçu autour de la Polar H10. Elle transmet votre fréquence cardiaque et les intervalles RR battement à battement pour une VFC précise. Humidifiez les électrodes, mettez la ceinture : elle apparaît dans Breathia en quelques secondes.',
-    bleTitle: 'Autres ceintures cardiaques Bluetooth',
+      'La Polar H10 en est un bon exemple. Elle transmet votre fréquence cardiaque et les intervalles RR battement à battement pour une VFC précise. Humidifiez les électrodes, mettez la ceinture : elle apparaît dans Breathia en quelques secondes.',
+    bleTitle: 'Tout capteur cardiaque Bluetooth',
     bleBody:
-      'Toute ceinture utilisant le service Bluetooth standard de fréquence cardiaque affiche votre fréquence cardiaque. Pour la VFC, elle doit aussi transmettre les intervalles RR.',
+      'Toute ceinture thoracique ou tout brassard utilisant le service Bluetooth standard de fréquence cardiaque s’associe de la même façon et affiche votre fréquence cardiaque. Pour la VFC, il doit aussi transmettre les intervalles RR, comme le font les ceintures thoraciques.',
     watchTitle: 'Apple Watch',
-    watchBody: 'Apple Watch mesure votre fréquence cardiaque pendant la séance — aucune ceinture nécessaire.',
+    watchBody: 'Apple Watch mesure votre fréquence cardiaque pendant la séance — aucun capteur nécessaire.',
     noneTitle: 'Pas de capteur ? Pas de problème.',
     noneBody:
       'Toutes les techniques fonctionnent sans capteur, et chaque séance compte quand même dans votre historique et vos minutes de pleine conscience.',
     fineprint:
-      'Les capteurs se connectent sur iPhone, iPad et Mac. Breathia utilise le Bluetooth uniquement pour se connecter à votre ceinture cardiaque ; il ne recherche aucun autre appareil et ne collecte aucune information à leur sujet.',
+      'Les capteurs se connectent sur iPhone, iPad et Mac. Breathia utilise le Bluetooth uniquement pour se connecter à votre capteur de fréquence cardiaque ; il ne recherche aucun autre appareil et ne collecte aucune information à leur sujet.',
   },
 
   how: {
@@ -117,7 +117,7 @@ export default {
     steps: [
       {
         title: 'Choisissez une technique',
-        body: 'Choisissez selon votre besoin du moment — calme, sommeil, concentration ou énergie — ou cherchez par nom. Associez votre ceinture depuis la barre d’outils.',
+        body: 'Choisissez selon votre besoin du moment — calme, sommeil, concentration ou énergie — ou cherchez par nom. Associez votre capteur depuis la barre d’outils.',
         alt: 'L’onglet Respirer avec les techniques par catégorie, des filtres et un capteur connecté affichant la fréquence cardiaque.',
       },
       {
@@ -170,7 +170,7 @@ export default {
     ipadTitle: 'iPad',
     ipadBody: 'Sur grand écran, les techniques et leurs détails s’affichent côte à côte, avec la même prise en charge des capteurs Bluetooth que sur iPhone.',
     macTitle: 'Mac',
-    macBody: 'Une app Mac native avec des signaux sonores doux. Connectez les mêmes ceintures Bluetooth et retrouvez chaque séance dans l’historique.',
+    macBody: 'Une app Mac native avec des signaux sonores doux. Connectez les mêmes capteurs Bluetooth et retrouvez chaque séance dans l’historique.',
     ipadAlt: 'Breathia sur iPad : la liste des techniques par catégorie à côté des détails de la respiration carrée.',
     macAlt: 'Breathia sur Mac : l’historique avec un bilan de séance — fréquence cardiaque au début, en moyenne et à la fin, et VFC en hausse.',
   },

@@ -5,7 +5,7 @@ export default {
   meta: {
     title: 'Breathia — Guided Breathing with Live HRV Biofeedback',
     description:
-      'Breathia guides you through {count} breathing techniques on iPhone, iPad, Mac and Apple Watch — and shows how your heart rate and HRV respond, live, with a Bluetooth chest strap such as the Polar H10. Free, private, no account needed.',
+      'Breathia guides you through {count} breathing techniques on iPhone, iPad, Mac and Apple Watch — and shows how your heart rate and HRV respond, live, with a Bluetooth heart-rate sensor such as the Polar H10. Free, private, no account needed.',
     ogTitle: 'Breathia — Breathe slower. See your heart follow.',
     ogDescription:
       'Guided breathing with live heart-rate and HRV feedback. {count} techniques for iPhone, iPad, Mac and Apple Watch.',
@@ -69,13 +69,13 @@ export default {
   bio: {
     eyebrow: 'Live biofeedback',
     title: 'See your heart settle<br class="br-lg" /> into your breathing.',
-    lede: 'Wear a Bluetooth chest strap, and Breathia shows how your heart rate and heart-rate variability change as you breathe — live, beat by beat.',
+    lede: 'Wear a Bluetooth heart-rate sensor, and Breathia shows how your heart rate and heart-rate variability change as you breathe — live, beat by beat.',
     deviceAlt:
       'A live Resonance Breathing session on iPhone: the breathing circle, session progress, the current HRV trend, and live heart-rate and HRV (RMSSD) charts.',
     cards: [
       {
         title: 'Heart rate and HRV, live',
-        body: 'Both update with every beat, calculated from the beat-to-beat (RR) intervals your strap sends. Choose RMSSD or SDNN — whichever HRV measure you prefer.',
+        body: 'Both update with every beat, calculated from the beat-to-beat (RR) intervals your sensor sends. Choose RMSSD or SDNN — whichever HRV measure you prefer.',
       },
       {
         title: 'The trend at a glance',
@@ -95,20 +95,20 @@ export default {
 
   sensors: {
     eyebrow: 'Sensors',
-    title: 'Pair a strap in seconds.<br class="br-lg" /> Or go without.',
+    title: 'Pair a sensor in seconds.<br class="br-lg" /> Or go without.',
     recommended: 'Recommended',
     polarBody:
-      'Breathia is built around the Polar H10. It sends your heart rate and beat-to-beat RR intervals for accurate HRV. Moisten the electrodes, put the strap on, and it shows up in Breathia within seconds.',
-    bleTitle: 'Other Bluetooth heart-rate straps',
+      'The Polar H10 is a great example. It sends your heart rate and beat-to-beat RR intervals for accurate HRV. Moisten the electrodes, put the strap on, and it shows up in Breathia within seconds.',
+    bleTitle: 'Any Bluetooth heart-rate sensor',
     bleBody:
-      'Any strap that uses the standard Bluetooth Heart Rate service shows your heart rate. For HRV, it also needs to send RR intervals.',
+      'Any chest strap or armband that uses the standard Bluetooth Heart Rate service pairs the same way and shows your heart rate. For HRV, it also needs to send RR intervals, as chest straps do.',
     watchTitle: 'Apple Watch',
-    watchBody: 'Apple Watch measures your heart rate during the session — no strap needed.',
+    watchBody: 'Apple Watch measures your heart rate during the session — no sensor needed.',
     noneTitle: 'No sensor? No problem.',
     noneBody:
       'Every technique works without a sensor, and every session still counts toward your History and mindful minutes.',
     fineprint:
-      'Sensors connect on iPhone, iPad and Mac. Breathia uses Bluetooth only to connect to your heart-rate strap; it doesn’t look for or collect information about any other devices.',
+      'Sensors connect on iPhone, iPad and Mac. Breathia uses Bluetooth only to connect to your heart-rate sensor; it doesn’t look for or collect information about any other devices.',
   },
 
   how: {
@@ -117,7 +117,7 @@ export default {
     steps: [
       {
         title: 'Choose a technique',
-        body: 'Pick what you need right now — calm, sleep, focus or energy — or search by name. Connect your strap from the toolbar.',
+        body: 'Pick what you need right now — calm, sleep, focus or energy — or search by name. Connect your sensor from the toolbar.',
         alt: 'The Breathe tab listing techniques by category, with filters and a connected sensor showing the heart rate.',
       },
       {
@@ -170,7 +170,7 @@ export default {
     ipadTitle: 'iPad',
     ipadBody: 'On the bigger screen, techniques and their details sit side by side — with the same Bluetooth sensor support as on iPhone.',
     macTitle: 'Mac',
-    macBody: 'A native Mac app with soft sound cues. Connect the same Bluetooth straps, and look back on every session in History.',
+    macBody: 'A native Mac app with soft sound cues. Connect the same Bluetooth sensors, and look back on every session in History.',
     ipadAlt: 'Breathia on iPad: the technique list by category beside Box Breathing’s details.',
     macAlt: 'Breathia on the Mac: History with a session report — heart rate at the start, on average and at the end, and HRV increasing.',
   },
