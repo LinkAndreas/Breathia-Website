@@ -110,7 +110,7 @@ To run it locally:
 
 `npm run build` outputs a static site in `dist/` with relative asset URLs, so it can be served from
 any host and path. `SITE_URL` sets the canonical URL used in links, the sitemap and `robots.txt`
-(default `https://www.linkandreas.de/breathia/`, see `content/site.js`).
+(default `https://breathia.linkandreas.de/`, see `content/site.js`).
 
 ## License
 

@@ -67,6 +67,7 @@ export function renderDocument({ lang, t, page, title, description, content, hea
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
+    <meta name="author" content="${escapeHtml(site.developer.name)}" />
     <link rel="canonical" href="${url}" />
     ${alternates}
     <link rel="alternate" hreflang="x-default" href="${absolute(routes[page](languages[0]))}" />
@@ -83,10 +84,12 @@ export function renderDocument({ lang, t, page, title, description, content, hea
     <meta property="og:description" content="${escapeHtml(ogDescription ?? description)}" />
     <meta property="og:url" content="${url}" />
     <meta property="og:image" content="${absolute('og-image.png')}" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="${escapeHtml(t.meta.ogImageAlt)}" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="${absolute('og-image.png')}" />
     ${head}
     <script>
       document.documentElement.classList.add('js');

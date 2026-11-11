@@ -2,7 +2,7 @@
 const appStoreId = '6812983709';
 
 /** Canonical, absolute URL of the deployed site. Override with SITE_URL at build time. */
-const siteUrl = (process.env.SITE_URL || 'https://www.linkandreas.de/breathia/').replace(/\/?$/, '/');
+const siteUrl = (process.env.SITE_URL || 'https://breathia.linkandreas.de/').replace(/\/?$/, '/');
 
 export const site = {
   /** Canonical, absolute URL of the deployed site, with a trailing slash. */
