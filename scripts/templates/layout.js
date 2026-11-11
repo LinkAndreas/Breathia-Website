@@ -1,7 +1,13 @@
 // The document shell shared by every page: head/SEO, navigation with language switcher, footer.
+import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { site } from '../../content/site.js';
 import { absolute, escapeHtml, languageName, languages, ogLocale, rel, routes } from './util.js';
+
+// The social preview image, with a hash of its content in the URL: the CDN and the networks that
+// show link previews cache it for days, so a changed image needs a new address to be seen.
+const ogImageFile = readFileSync(new URL('../../public/og-image.png', import.meta.url));
+const ogImage = `${absolute('og-image.png')}?v=${createHash('sha256').update(ogImageFile).digest('hex').slice(0, 8)}`;
 
 const globeIcon =
   '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg>';
@@ -83,13 +89,13 @@ export function renderDocument({ lang, t, page, title, description, content, hea
     <meta property="og:title" content="${escapeHtml(ogTitle ?? title)}" />
     <meta property="og:description" content="${escapeHtml(ogDescription ?? description)}" />
     <meta property="og:url" content="${url}" />
-    <meta property="og:image" content="${absolute('og-image.png')}" />
+    <meta property="og:image" content="${ogImage}" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="${escapeHtml(t.meta.ogImageAlt)}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="${absolute('og-image.png')}" />
+    <meta name="twitter:image" content="${ogImage}" />
     ${head}
     <script>
       document.documentElement.classList.add('js');
