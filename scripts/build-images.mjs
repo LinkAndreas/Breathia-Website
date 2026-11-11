@@ -29,37 +29,6 @@ await sharp(iconPng).resize(180).png().toFile(path.join(publicDir, 'apple-touch-
 await sharp(iconPng).resize(256).webp({ quality: 90 }).toFile(path.join(publicDir, 'images/icon-256.webp'));
 await copyFile(path.join(root, 'content/brand/icon.svg'), path.join(publicDir, 'favicon.svg'));
 
-// Social preview (1200×630), drawn from the icon's own palette.
-const icon = await readFile(path.join(root, 'content/brand/icon.svg'), 'utf8');
-const iconData = `data:image/svg+xml;base64,${Buffer.from(icon).toString('base64')}`;
-const og = `
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#050a24"/><stop offset="0.45" stop-color="#1b2a6e"/>
-      <stop offset="0.78" stop-color="#6a4f9e"/><stop offset="1" stop-color="#f59a86"/>
-    </linearGradient>
-    <radialGradient id="sun" cx="0.42" cy="0.4" r="0.6">
-      <stop offset="0" stop-color="#fff8e6"/><stop offset="0.55" stop-color="#ffd9a3"/><stop offset="1" stop-color="#ff9f73"/>
-    </radialGradient>
-    <radialGradient id="halo" cx="900" cy="330" r="420" gradientUnits="userSpaceOnUse">
-      <stop offset="0.3" stop-color="#ff8f7a" stop-opacity="0.5"/><stop offset="1" stop-color="#ff8f7a" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="w1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a6dcf2" stop-opacity="0.5"/><stop offset="0.8" stop-color="#4a96cc"/></linearGradient>
-    <linearGradient id="w2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#63abdc" stop-opacity="0.7"/><stop offset="0.8" stop-color="#16397a"/></linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#sky)"/>
-  <rect width="1200" height="630" fill="url(#halo)"/>
-  <circle cx="900" cy="340" r="170" fill="url(#sun)"/>
-  <path d="M0 470 C150 440 300 440 450 470 S750 500 900 470 S1100 440 1200 460 V630 H0Z" fill="url(#w1)"/>
-  <path d="M0 540 C120 510 240 505 360 530 S600 575 720 545 S960 500 1200 540 V630 H0Z" fill="url(#w2)"/>
-  <image href="${iconData}" x="80" y="92" width="112" height="112"/>
-  <text x="80" y="300" font-family="SF Pro Display, Helvetica Neue, Arial" font-weight="700" font-size="84" fill="#ffffff" letter-spacing="-2">Breathia</text>
-  <text x="82" y="362" font-family="SF Pro Display, Helvetica Neue, Arial" font-weight="500" font-size="34" fill="#ffffff" fill-opacity="0.82">Guided breathing with live</text>
-  <text x="82" y="406" font-family="SF Pro Display, Helvetica Neue, Arial" font-weight="500" font-size="34" fill="#ffffff" fill-opacity="0.82">heart-rate &amp; HRV biofeedback.</text>
-</svg>`;
-await sharp(Buffer.from(og)).png({ compressionLevel: 9 }).toFile(path.join(publicDir, 'og-image.png'));
-
 console.log('Images written to public/.');
 
 // ---------------------------------------------------------------------------------------------
@@ -188,3 +157,38 @@ if (bezelDir) {
 } else {
   console.log('BEZELS not set — kept the existing device mockups in public/images/devices.');
 }
+
+// ---------------------------------------------------------------------------------------------
+// Social preview (1200×630, the 1.91:1 that LinkedIn, Facebook and X show uncropped), drawn from
+// the icon's own palette. Link previews are often shown small, so the type is large and sparse.
+const icon = await readFile(path.join(root, 'content/brand/icon.svg'), 'utf8');
+const iconData = `data:image/svg+xml;base64,${Buffer.from(icon).toString('base64')}`;
+const font = 'font-family="SF Pro Display, Helvetica Neue, Arial"';
+const og = `
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050a24"/><stop offset="0.45" stop-color="#1b2a6e"/>
+      <stop offset="0.78" stop-color="#6a4f9e"/><stop offset="1" stop-color="#f59a86"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.42" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#fff8e6"/><stop offset="0.55" stop-color="#ffd9a3"/><stop offset="1" stop-color="#ff9f73"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="910" cy="330" r="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0.3" stop-color="#ff8f7a" stop-opacity="0.55"/><stop offset="1" stop-color="#ff8f7a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="w1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a6dcf2" stop-opacity="0.5"/><stop offset="0.8" stop-color="#4a96cc"/></linearGradient>
+    <linearGradient id="w2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#63abdc" stop-opacity="0.7"/><stop offset="0.8" stop-color="#16397a"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <rect width="1200" height="630" fill="url(#halo)"/>
+  <circle cx="910" cy="330" r="190" fill="url(#sun)"/>
+  <path d="M0 490 C150 460 300 460 450 490 S750 520 900 490 S1100 460 1200 480 V630 H0Z" fill="url(#w1)"/>
+  <path d="M0 555 C120 525 240 520 360 545 S600 590 720 560 S960 515 1200 555 V630 H0Z" fill="url(#w2)"/>
+  <image href="${iconData}" x="80" y="96" width="104" height="104"/>
+  <text x="76" y="318" ${font} font-weight="700" font-size="104" fill="#ffffff" letter-spacing="-3">Breathia</text>
+  <text x="80" y="386" ${font} font-weight="500" font-size="42" fill="#ffffff" fill-opacity="0.9">Guided breathing with live</text>
+  <text x="80" y="440" ${font} font-weight="500" font-size="42" fill="#ffffff" fill-opacity="0.9">heart-rate &amp; HRV biofeedback.</text>
+</svg>`;
+await sharp(Buffer.from(og)).png({ compressionLevel: 9 }).toFile(path.join(publicDir, 'og-image.png'));
+console.log('Social preview written to public/og-image.png.');
