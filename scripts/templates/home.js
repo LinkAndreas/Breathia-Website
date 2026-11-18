@@ -176,8 +176,8 @@ const languageRedirect = (dir) => `<script>
       })();
     </script>`;
 
-/** The app icons supporters can choose, in the app's order (SupporterIcon.swift), with their files in public/images/icons. */
-const supporterIcons = [
+/** The app icons everyone can choose, in the app's order, with their files in public/images/icons. */
+const appIcons = [
   ['classic', 'classic'],
   ['amethyst', 'amethyst'],
   ['blush', 'blush'],
@@ -517,7 +517,7 @@ export function renderHome(lang, t) {
         </div>
       </section>
 
-      <!-- Supporter app icons -->
+      <!-- App icons -->
       <section class="section section--alt" id="icons" aria-labelledby="icons-title">
         <div class="container">
           <header class="section__header section__header--center">
@@ -526,9 +526,9 @@ export function renderHome(lang, t) {
             <p class="section__lede reveal">${t.icons.lede}</p>
           </header>
           <ul class="app-icons" role="list" aria-label="${t.icons.label}">
-            ${supporterIcons
+            ${appIcons
               .map(
-                ([id, file]) => `<li class="app-icon reveal${id === 'classic' ? ' app-icon--free' : ''}">
+                ([id, file]) => `<li class="app-icon reveal">
               <picture>
                 <source srcset="${versioned(`/images/icons/${file}-dark.svg`)}" media="(prefers-color-scheme: dark)" data-dark-source />
                 <img src="${versioned(`/images/icons/${file}.svg`)}" width="96" height="96" alt="" loading="lazy" />
