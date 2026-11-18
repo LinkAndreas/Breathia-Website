@@ -181,7 +181,7 @@ export default {
     pillars: [
       { title: 'En tu dispositivo', body: 'El historial y los ajustes se quedan en tus dispositivos. Si eliminas la app, sus datos se van con ella.' },
       { title: 'Sin cuenta', body: 'Abre la app y empieza a respirar. Sin registros ni inicios de sesión.' },
-      { title: 'Todo gratis', body: 'Todas las funciones de Breathia son gratuitas. Las propinas y suscripciones opcionales apoyan su desarrollo; con una suscripción, además, hay iconos alternativos.' },
+      { title: 'Todo gratis', body: 'Breathia es totalmente gratis: todas las funciones y todos los iconos. Sin compras dentro de la app y sin anuncios.' },
     ],
     link: 'Leer la política de privacidad',
   },
@@ -189,10 +189,10 @@ export default {
   icons: {
     eyebrow: 'Iconos',
     title: 'Hazla tuya.',
-    lede: 'Como agradecimiento, quienes apoyan pueden elegir entre siete iconos más, y en iPhone y iPad Breathia adopta los colores del que elijan.',
+    lede: 'Elige entre ocho iconos de la app, y en iPhone y iPad Breathia adopta los colores del que elijas.',
     label: 'Iconos de la app',
     names: { classic: 'Clásico', amethyst: 'Amatista', blush: 'Rosa', ember: 'Brasa', glacier: 'Glaciar', lagoon: 'Laguna', midnightGold: 'Oro de medianoche', noir: 'Noir' },
-    note: 'Clásico es gratis para todos. Los demás iconos forman parte del apoyo mensual o anual mientras esté activo. Todas las funciones de Breathia siguen siendo gratuitas en cualquier caso.',
+    note: 'Todos los iconos son gratis para todos, igual que todas las funciones de Breathia.',
   },
 
   cta: {
@@ -223,7 +223,7 @@ export default {
       'Cómo trata Breathia tus datos: sin cuenta, sin servidor y sin seguimiento. Tu frecuencia cardiaca, tu VFC y tu historial de sesiones se quedan en tus dispositivos.',
     termsTitle: 'Condiciones de uso',
     termsDescription:
-      'Las condiciones de uso de la app Breathia: el EULA estándar de Apple más unas breves condiciones adicionales: aviso de salud, compras opcionales y responsabilidad.',
+      'Las condiciones de uso de la app Breathia: el EULA estándar de Apple más unas breves condiciones adicionales: aviso de salud, responsabilidad y código abierto.',
     redirecting: 'Redirigiendo…',
   },
 };

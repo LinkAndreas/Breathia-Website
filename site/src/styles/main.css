@@ -1742,7 +1742,7 @@ button {
 }
 
 /* ==========================================================================
-   Supporter app icons
+   App icons
    ========================================================================== */
 .app-icons {
   display: grid;
@@ -1781,10 +1781,6 @@ button {
 }
 .app-icon:hover img {
   transform: translateY(-4px) rotate(-3deg);
-}
-.app-icon--free span {
-  color: var(--ink);
-  font-weight: 600;
 }
 .app-icons__note {
   margin: 2rem auto 0;

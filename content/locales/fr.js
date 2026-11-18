@@ -182,7 +182,7 @@ export default {
     pillars: [
       { title: 'Sur votre appareil', body: 'L’historique et les réglages restent sur vos appareils. Supprimez l’app, et ses données disparaissent avec elle.' },
       { title: 'Sans compte', body: 'Ouvrez l’app et respirez. Ni inscription, ni identifiant.' },
-      { title: 'Tout est gratuit', body: 'Toutes les fonctionnalités de Breathia sont gratuites. Les pourboires et abonnements facultatifs soutiennent son développement ; les abonnés profitent en plus d’icônes d’app alternatives.' },
+      { title: 'Tout est gratuit', body: 'Breathia est entièrement gratuit : toutes les fonctionnalités et toutes les icônes d’app. Sans achats intégrés ni publicité.' },
     ],
     link: 'Lire la politique de confidentialité',
   },
@@ -190,10 +190,10 @@ export default {
   icons: {
     eyebrow: 'Icônes',
     title: 'À votre image.',
-    lede: 'En remerciement, les soutiens peuvent choisir parmi sept autres icônes d’app — et sur iPhone et iPad, Breathia prend les couleurs de celle qu’ils choisissent.',
+    lede: 'Choisissez parmi huit icônes d’app — et sur iPhone et iPad, Breathia prend les couleurs de celle que vous choisissez.',
     label: 'Icônes d’app',
     names: { classic: 'Classique', amethyst: 'Améthyste', blush: 'Rose poudré', ember: 'Braise', glacier: 'Glacier', lagoon: 'Lagon', midnightGold: 'Or de minuit', noir: 'Noir' },
-    note: 'Classique est gratuite pour tous. Les autres icônes accompagnent le soutien mensuel ou annuel, tant qu’il est actif. Toutes les fonctionnalités de Breathia restent gratuites dans tous les cas.',
+    note: 'Toutes les icônes sont gratuites pour tous, comme chaque fonctionnalité de Breathia.',
   },
 
   cta: {
@@ -224,7 +224,7 @@ export default {
       'Comment Breathia traite vos données : sans compte, sans serveur, sans suivi. Votre fréquence cardiaque, votre VFC et votre historique restent sur vos appareils.',
     termsTitle: 'Conditions d’utilisation',
     termsDescription:
-      'Les conditions d’utilisation de l’app Breathia : l’EULA standard d’Apple, complété de quelques points courts — avertissement santé, achats facultatifs, responsabilité.',
+      'Les conditions d’utilisation de l’app Breathia : l’EULA standard d’Apple, complété de quelques points courts — avertissement santé, responsabilité, open source.',
     redirecting: 'Redirection…',
   },
 };

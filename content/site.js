@@ -23,7 +23,7 @@ export const site = {
   },
 
   /** Effective date of the legal pages (ISO). Update whenever their text changes. */
-  legalEffectiveDate: '2026-10-13',
+  legalEffectiveDate: '2026-11-18',
 
   /** Languages, in switcher order. The first is the default at the site root. */
   languages: [

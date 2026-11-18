@@ -182,7 +182,7 @@ export default {
     pillars: [
       { title: 'On your device', body: 'History and settings stay on your devices. Delete the app, and its data goes with it.' },
       { title: 'No account', body: 'Open the app and start breathing. No sign-up, no login.' },
-      { title: 'Every feature, free', body: 'Everything in Breathia is free. Optional tips and subscriptions support its development; subscribers also get alternative app icons.' },
+      { title: 'Every feature, free', body: 'Breathia is completely free: every feature and every app icon. No in-app purchases, no ads.' },
     ],
     link: 'Read the Privacy Policy',
   },
@@ -190,10 +190,10 @@ export default {
   icons: {
     eyebrow: 'App icons',
     title: 'Make it yours.',
-    lede: 'Supporters can choose from seven more app icons — and on iPhone and iPad, Breathia takes on the colors of the one they pick.',
+    lede: 'Pick any of eight app icons — and on iPhone and iPad, Breathia takes on the colors of the one you choose.',
     label: 'App icons',
     names: { classic: 'Classic', amethyst: 'Amethyst', blush: 'Blush', ember: 'Ember', glacier: 'Glacier', lagoon: 'Lagoon', midnightGold: 'Midnight Gold', noir: 'Noir' },
-    note: 'Classic is free for everyone. The other icons come with Monthly or Yearly Support, for as long as it’s active. Every feature of Breathia stays free either way.',
+    note: 'Every icon is free for everyone, just like every feature of Breathia.',
   },
 
   cta: {
@@ -224,7 +224,7 @@ export default {
       'How Breathia handles your data: no account, no server, no tracking. Your heart rate, HRV and session history stay on your devices.',
     termsTitle: 'Terms of Use',
     termsDescription:
-      'The terms of use for the Breathia app: Apple’s Standard EULA plus a few short additions — health notice, optional purchases, liability.',
+      'The terms of use for the Breathia app: Apple’s Standard EULA plus a few short additions — health notice, liability, open source.',
     redirecting: 'Redirecting…',
   },
 };
