@@ -9,7 +9,6 @@ export const site = {
   url: siteUrl,
   appStoreId,
   appStoreUrl: `https://apps.apple.com/app/id${appStoreId}`,
-  githubUrl: 'https://github.com/LinkAndreas/Breathia',
   feedbackEmail: 'feedback@linkandreas.de',
   privacyEmail: 'privacy@linkandreas.de',
 
@@ -19,11 +18,11 @@ export const site = {
     email: 'feedback@linkandreas.de',
     // Postal address for the contact blocks of the legal pages. Lines are rendered as given;
     // leave empty to omit (the build warns while it is missing).
-    address: [],
+    address: ['Schwarzwaldstr. 22', '76473 Iffezheim', 'Deutschland'],
   },
 
   /** Effective date of the legal pages (ISO). Update whenever their text changes. */
-  legalEffectiveDate: '2026-11-18',
+  legalEffectiveDate: '2026-11-19',
 
   /** Languages, in switcher order. The first is the default at the site root. */
   languages: [

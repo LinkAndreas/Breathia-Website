@@ -6,11 +6,13 @@ export const defaultLanguage = languages[0];
 /**
  * Site-relative output paths (directories, trailing slash) for each page.
  * Privacy and terms keep the /privacy/<lang> and /termsofuse/<lang> paths the app links to.
+ * The legal notice (Impressum) lives at /imprint/<lang>.
  */
 export const routes = {
   home: (lang) => (lang === defaultLanguage ? '' : `${lang}/`),
   privacy: (lang) => `privacy/${lang}/`,
   terms: (lang) => `termsofuse/${lang}/`,
+  imprint: (lang) => `imprint/${lang}/`,
 };
 
 /** A relative href from one page directory to another (or to a file/anchor). */

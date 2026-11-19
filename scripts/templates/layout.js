@@ -145,9 +145,9 @@ ${content}
         </div>
         <nav class="footer__links" aria-label="${t.footer.label}">
           <a href="${rel(dir, routes.privacy(lang))}"${page === 'privacy' ? ' aria-current="page"' : ''}>${t.footer.privacy}</a>
+          <a href="${rel(dir, routes.imprint(lang))}"${page === 'imprint' ? ' aria-current="page"' : ''}>${t.footer.imprint}</a>
           <a href="${rel(dir, routes.terms(lang))}"${page === 'terms' ? ' aria-current="page"' : ''}>${t.footer.terms}</a>
           <a href="mailto:${site.feedbackEmail}">${t.footer.feedback}</a>
-          <a href="${site.githubUrl}">${t.footer.github}</a>
         </nav>
         <p class="footer__disclaimer">${t.footer.disclaimer}</p>
         <p class="footer__copy">© ${new Date().getFullYear()} ${site.developer.name}</p>
