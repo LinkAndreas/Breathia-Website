@@ -33,7 +33,7 @@ const mapStrings = (value, fn) =>
 for (const lang of languages) locales[lang] = mapStrings(locales[lang], (text) => typeset(lang, text));
 
 // Start clean, so pages removed from the templates don't linger.
-for (const dir of [...languages.filter((l) => l !== languages[0]), 'privacy', 'termsofuse']) {
+for (const dir of [...languages.filter((l) => l !== languages[0]), 'privacy', 'termsofuse', 'imprint']) {
   await rm(path.join(out, dir), { recursive: true, force: true });
 }
 
@@ -50,7 +50,7 @@ async function write(dir, html) {
 for (const lang of languages) {
   const t = locales[lang];
   await write(routes.home(lang), renderHome(lang, t));
-  for (const [page, doc] of [['privacy', 'privacy'], ['terms', 'terms']]) {
+  for (const [page, doc] of [['privacy', 'privacy'], ['terms', 'terms'], ['imprint', 'imprint']]) {
     const body = typeset(lang, await readFile(path.join(root, `content/legal/${doc}.${lang}.html`), 'utf8'));
     await write(routes[page](lang), renderLegal(page, lang, t, body));
   }
@@ -58,6 +58,7 @@ for (const lang of languages) {
 
 await writeRedirect('privacy');
 await writeRedirect('terms');
+await writeRedirect('imprint');
 
 async function writeRedirect(page) {
   const dir = routes[page](languages[0]).replace(/[^/]+\/$/, '');
@@ -67,7 +68,7 @@ async function writeRedirect(page) {
 }
 
 // Sitemap with hreflang alternates for every localized page.
-const groups = ['home', 'privacy', 'terms'];
+const groups = ['home', 'privacy', 'terms', 'imprint'];
 const urls = groups.flatMap((page) =>
   languages.map((lang) => {
     const alternates = languages

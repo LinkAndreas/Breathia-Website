@@ -204,11 +204,11 @@ export default {
   },
 
   footer: {
-    label: 'Mentions légales et contact',
+    label: 'Informations légales et contact',
     privacy: 'Politique de confidentialité',
+    imprint: 'Mentions légales',
     terms: 'Conditions d’utilisation',
     feedback: 'Envoyer un commentaire',
-    github: 'Open source sur GitHub',
     disclaimer:
       'Breathia est une app de bien-être, pas un dispositif médical. Elle n’est pas destinée à diagnostiquer ou à traiter une quelconque affection. Polar et H10 sont des marques de Polar Electro Oy. Apple, le logo Apple, Apple Watch, iPad, iPhone, Mac, MacBook et App Store sont des marques d’Apple Inc., déposées aux États-Unis et dans d’autres pays.',
   },
@@ -224,7 +224,9 @@ export default {
       'Comment Breathia traite vos données : sans compte, sans serveur, sans suivi. Votre fréquence cardiaque, votre VFC et votre historique restent sur vos appareils.',
     termsTitle: 'Conditions d’utilisation',
     termsDescription:
-      'Les conditions d’utilisation de l’app Breathia : l’EULA standard d’Apple, complété de quelques points courts — avertissement santé, responsabilité, open source.',
+      'Les conditions d’utilisation de l’app Breathia : l’EULA standard d’Apple, complété de quelques points courts — avertissement santé et responsabilité.',
+    imprintTitle: 'Mentions légales',
+    imprintDescription: 'Mentions légales de Breathia : informations sur le prestataire conformément au § 5 DDG.',
     redirecting: 'Redirection…',
   },
 };

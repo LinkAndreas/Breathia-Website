@@ -205,9 +205,9 @@ export default {
   footer: {
     label: 'Rechtliches und Kontakt',
     privacy: 'Datenschutzerklärung',
+    imprint: 'Impressum',
     terms: 'Nutzungsbedingungen',
     feedback: 'Feedback senden',
-    github: 'Open Source auf GitHub',
     disclaimer:
       'Breathia ist eine Wellness-App und kein Medizinprodukt. Sie ist nicht dazu bestimmt, Krankheiten zu diagnostizieren oder zu behandeln. Polar und H10 sind Marken der Polar Electro Oy. Apple, das Apple Logo, Apple Watch, iPad, iPhone, Mac, MacBook und App Store sind Marken der Apple Inc., die in den USA und weiteren Ländern eingetragen sind.',
   },
@@ -223,7 +223,9 @@ export default {
       'Wie Breathia mit deinen Daten umgeht: kein Konto, kein Server, kein Tracking. Herzfrequenz, HRV und Sitzungsverlauf bleiben auf deinen Geräten.',
     termsTitle: 'Nutzungsbedingungen',
     termsDescription:
-      'Die Nutzungsbedingungen der App Breathia: der Standard-EULA von Apple plus wenige kurze Ergänzungen – Gesundheitshinweis, Haftung, Open Source.',
+      'Die Nutzungsbedingungen der App Breathia: der Standard-EULA von Apple plus wenige kurze Ergänzungen – Gesundheitshinweis und Haftung.',
+    imprintTitle: 'Impressum',
+    imprintDescription: 'Impressum von Breathia: Anbieterkennzeichnung gemäß § 5 DDG.',
     redirecting: 'Weiterleitung …',
   },
 };
