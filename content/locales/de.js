@@ -9,7 +9,7 @@ export default {
     ogDescription:
       'Geführtes Atmen mit Live-Feedback zu Herzfrequenz und HRV. {count} Techniken für iPhone, iPad, Mac und Apple Watch.',
     ogImageAlt:
-      'Das Breathia-App-Symbol – eine Sonne, die über zwei Wellen untergeht – neben dem Satz: Guided breathing with live heart-rate and HRV biofeedback.',
+      'Das Breathia-App-Icon – eine Sonne, die über zwei Wellen untergeht – neben dem Satz: Guided breathing with live heart-rate and HRV biofeedback.',
   },
 
   common: {
@@ -40,7 +40,7 @@ export default {
     secondary: 'So funktioniert’s',
     meta: 'Kostenlos · Kein Konto · Mit oder ohne Sensor',
     phoneAlt:
-      'Eine Breathia-Sitzung auf dem iPhone: Der Atemkreis zeigt „Einatmen 2“, Zyklus 7 der Resonanzatmung, darunter Live-Diagramme zu Herzfrequenz und HRV.',
+      'Eine Breathia-Sitzung auf dem iPhone: Der Atemkreis zählt das Ausatmen der Resonanzatmung herunter, darunter der Hinweis, dass Atem und Herz im Einklang sind, und Live-Diagramme zu Herzfrequenz und HRV.',
   },
 
   glance: {
@@ -56,7 +56,7 @@ export default {
     title: 'Ein Kreis, der mit dir atmet.',
     lede: 'Der Kreis wächst beim Einatmen und wird beim Ausatmen kleiner. Die Zahl in der Mitte zählt beim Einatmen und Halten hoch und beim Ausatmen wieder herunter – so weißt du immer, wo du gerade bist, auch mit halb geschlossenen Augen.',
     ticks: [
-      '<strong>Haptische und akustische Signale</strong> kündigen jeden Phasenwechsel an. Du kannst also ruhig die Augen schließen.',
+      '<strong>Haptik und acht ruhige, natürliche Klänge</strong> – von Klangschale und Windspiel bis Meeresrauschen, in der Lautstärke, die du wählst – kündigen jeden Phasenwechsel an. Du kannst also ruhig die Augen schließen.',
       '<strong>Ein kurzer Countdown</strong> stimmt dich ein und zeigt, womit es losgeht.',
       '<strong>Der Bildschirm bleibt an</strong>, solange du atmest. Verlässt du die App, pausiert die Sitzung – die Zeit dazwischen zählt nicht.',
     ],
@@ -70,7 +70,7 @@ export default {
     title: 'Sieh, wie sich dein Herz<br class="br-lg" /> auf deinen Atem einstellt.',
     lede: 'Leg einen Bluetooth-Herzfrequenzsensor an, und Breathia zeigt dir, wie sich Herzfrequenz und Herzfrequenzvariabilität beim Atmen verändern – live, Schlag für Schlag.',
     deviceAlt:
-      'Eine laufende Sitzung Resonanzatmung auf dem iPhone: der Atemkreis, der Sitzungsfortschritt, der aktuelle HRV-Trend und Live-Diagramme zu Herzfrequenz und HRV (RMSSD).',
+      'Eine laufende Sitzung Resonanzatmung auf dem iPhone: der Atemkreis, der Sitzungsfortschritt, der Hinweis, dass Atem und Herz im Einklang sind, und Live-Diagramme zu Herzfrequenz und HRV (RMSSD).',
     cards: [
       {
         title: 'Herzfrequenz und HRV, live',
@@ -126,8 +126,8 @@ export default {
       },
       {
         title: 'Sehen, was sich verändert hat',
-        body: 'Dein Sitzungsbericht zeigt die Herzfrequenz zu Beginn, im Schnitt und am Ende, wie sich deine HRV entwickelt hat, und ein kurzes Fazit in klaren Worten.',
-        alt: 'Ein Sitzungsbericht: Herzfrequenz 71 zu Beginn, 63 im Schnitt, 58 am Ende; RMSSD 52 ms, steigend; und der Hinweis, dass die HRV im Verlauf der Sitzung gestiegen ist.',
+        body: 'Dein Sitzungsbericht zeigt deine Herzfrequenz Sekunde für Sekunde, wie sie mit jedem Atemzug stieg und fiel und wie sich deine HRV entwickelt hat – jeweils in klaren Worten erklärt.',
+        alt: 'Ein Sitzungsbericht: der Hinweis, dass sich die Herzfrequenz um 16 Schläge von 71 auf 55 beruhigt hat, mit Schnitt, Tiefst- und Höchstwert, über einem sekundengenauen Herzfrequenz-Diagramm.',
       },
     ],
   },
@@ -152,7 +152,7 @@ export default {
       '<strong>Apple Watch inklusive.</strong> Sitzungen von Apple Watch erscheinen im Verlauf auf dem iPhone.',
     ],
     listAlt: 'Der Tab „Verlauf“ mit vergangenen Atemsitzungen, gruppiert nach gestern, den letzten 7 Tagen und den letzten 30 Tagen.',
-    detailAlt: 'Ein gespeicherter Sitzungsbericht zur Resonanzatmung mit Zusammenfassungen zu Herzfrequenz und HRV.',
+    detailAlt: 'Ein gespeicherter Sitzungsbericht zur Resonanzatmung mit einem detaillierten Herzfrequenz-Diagramm.',
   },
 
   everywhere: {
@@ -181,35 +181,43 @@ export default {
     pillars: [
       { title: 'Auf deinem Gerät', body: 'Verlauf und Einstellungen bleiben auf deinen Geräten. Löschst du die App, sind auch ihre Daten weg.' },
       { title: 'Kein Konto', body: 'App öffnen und losatmen. Keine Registrierung, keine Anmeldung.' },
-      { title: 'Alle Funktionen kostenlos', body: 'Breathia ist komplett kostenlos – mit allen Funktionen und allen App-Symbolen. Keine In-App-Käufe, keine Werbung.' },
+      { title: 'Alle Funktionen kostenlos', body: 'Breathia ist komplett kostenlos – mit allen Funktionen und allen App-Icons. Keine In-App-Käufe, keine Werbung.' },
     ],
     link: 'Datenschutzerklärung lesen',
   },
 
   icons: {
-    eyebrow: 'App-Symbole',
+    eyebrow: 'App-Icons',
     title: 'Mach es zu deinem.',
-    lede: 'Wähle eines von acht App-Symbolen – und auf iPhone und iPad nimmt Breathia die Farben des gewählten an.',
-    label: 'App-Symbole',
+    lede: 'Wähle eines von acht App-Icons – und auf iPhone und iPad nimmt Breathia die Farben des gewählten an.',
+    label: 'App-Icons',
     names: { classic: 'Klassisch', amethyst: 'Amethyst', blush: 'Zartrosa', ember: 'Glut', glacier: 'Gletscher', lagoon: 'Lagune', midnightGold: 'Mitternachtsgold', noir: 'Noir' },
     note: 'Alle Symbole sind für alle kostenlos, genau wie jede Funktion von Breathia.',
   },
 
   cta: {
-    iconAlt: 'Das Breathia-App-Symbol',
+    iconAlt: 'Das Breathia-App-Icon',
     title: 'Atme einmal durch.<br />Und dann noch einmal.',
     lede: 'Breathia gibt es kostenlos im App Store – für iPhone, iPad, Mac und Apple Watch.',
-    meta: 'Verfügbar auf Deutsch, English, Español und Français',
+    meta: 'Verfügbar in 11 Sprachen',
   },
 
   footer: {
     label: 'Rechtliches und Kontakt',
+    versions: 'Versionshistorie',
     privacy: 'Datenschutzerklärung',
     imprint: 'Impressum',
     terms: 'Nutzungsbedingungen',
     feedback: 'Feedback senden',
     disclaimer:
       'Breathia ist eine Wellness-App und kein Medizinprodukt. Sie ist nicht dazu bestimmt, Krankheiten zu diagnostizieren oder zu behandeln. Polar und H10 sind Marken der Polar Electro Oy. Apple, das Apple Logo, Apple Watch, iPad, iPhone, Mac, MacBook und App Store sind Marken der Apple Inc., die in den USA und weiteren Ländern eingetragen sind.',
+  },
+
+  versions: {
+    title: 'Versionshistorie',
+    lede: 'Was jede Version von Breathia im App Store gebracht hat.',
+    description: 'Alle Versionen von Breathia im App Store und was sie gebracht haben – für iPhone, iPad, Mac und Apple Watch.',
+    version: 'Version',
   },
 
   legal: {

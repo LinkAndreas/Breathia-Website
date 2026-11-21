@@ -117,6 +117,11 @@ body {
   overflow-x: clip;
 }
 
+/* Japanese has no spaces: break lines between phrases rather than mid-word where supported. */
+:lang(ja) {
+  word-break: auto-phrase;
+}
+
 img,
 svg {
   display: block;
