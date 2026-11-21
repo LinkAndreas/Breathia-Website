@@ -10,6 +10,7 @@ export const site = {
   appStoreId,
   appStoreUrl: `https://apps.apple.com/app/id${appStoreId}`,
   feedbackEmail: 'feedback@linkandreas.de',
+  sourceUrl: 'https://github.com/LinkAndreas/Breathia',
   privacyEmail: 'privacy@linkandreas.de',
 
   /** The provider of the app, named in the legal pages. */
@@ -22,13 +23,24 @@ export const site = {
   },
 
   /** Effective date of the legal pages (ISO). Update whenever their text changes. */
-  legalEffectiveDate: '2026-11-19',
+  legalEffectiveDate: '2026-11-21',
 
-  /** Languages, in switcher order. The first is the default at the site root. */
+  /**
+   * Languages, in switcher order. The first is the default at the site root.
+   * `code` is the URL path segment (and the locale file name), `tag` the BCP 47 language tag
+   * for lang/hreflang attributes, `locale` the Open Graph locale.
+   */
   languages: [
-    { code: 'en', name: 'English', locale: 'en_US' },
-    { code: 'de', name: 'Deutsch', locale: 'de_DE' },
-    { code: 'fr', name: 'Français', locale: 'fr_FR' },
-    { code: 'es', name: 'Español', locale: 'es_ES' },
+    { code: 'en', tag: 'en', name: 'English', locale: 'en_US' },
+    { code: 'de', tag: 'de', name: 'Deutsch', locale: 'de_DE' },
+    { code: 'fr', tag: 'fr', name: 'Français', locale: 'fr_FR' },
+    { code: 'es', tag: 'es', name: 'Español', locale: 'es_ES' },
+    { code: 'it', tag: 'it', name: 'Italiano', locale: 'it_IT' },
+    { code: 'pt-br', tag: 'pt-BR', name: 'Português (Brasil)', locale: 'pt_BR' },
+    { code: 'nl', tag: 'nl', name: 'Nederlands', locale: 'nl_NL' },
+    { code: 'ja', tag: 'ja', name: '日本語', locale: 'ja_JP' },
+    { code: 'ko', tag: 'ko', name: '한국어', locale: 'ko_KR' },
+    { code: 'zh', tag: 'zh-Hans', name: '简体中文', locale: 'zh_CN' },
+    { code: 'ru', tag: 'ru', name: 'Русский', locale: 'ru_RU' },
   ],
 };

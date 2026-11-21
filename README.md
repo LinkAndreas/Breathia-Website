@@ -1,7 +1,7 @@
 # Breathia website
 
-Marketing site for [Breathia](https://github.com/LinkAndreas/Breathia) in English, German, French and
-Spanish, with its Privacy Policy and Terms of Use. Static HTML rendered at build time, built with Vite.
+Marketing site for [Breathia](https://github.com/LinkAndreas/Breathia) in English, German, French,
+Spanish, Italian, Brazilian Portuguese, Dutch, Japanese, Korean, Simplified Chinese and Russian, with its Privacy Policy and Terms of Use. Static HTML rendered at build time, built with Vite.
 
 ```bash
 npm install
@@ -14,13 +14,13 @@ npm run preview   # serve dist/
 
 | Path | Page |
 |---|---|
-| `/` · `/de/` · `/fr/` · `/es/` | Landing page (English at the root) |
+| `/` · `/de/` · `/fr/` · `/es/` · `/it/` · `/pt-br/` · `/nl/` · `/ja/` · `/ko/` · `/zh/` · `/ru/` | Landing page (English at the root) |
 | `/privacy/<lang>/` | Privacy Policy |
 | `/termsofuse/<lang>/` | Terms of Use (the app's custom EULA) |
 | `/privacy/` · `/termsofuse/` | Forward to the visitor's language |
 
 The legal paths match the links built into the app (`SupportLinks.swift`). On a first visit, the English
-root page forwards visitors whose browser prefers German, French or Spanish; choosing a language in the
+root page forwards visitors whose browser prefers one of the other languages; choosing a language in the
 switcher is remembered and turns this off.
 
 ## Where things live
@@ -67,9 +67,13 @@ BEZELS=/Volumes BREATHIA_APP=../../Swift/Breathia npm run images
 
 ## Adding a language
 
-Add it to `languages` in `content/site.js`, create `content/locales/<code>.js` and
-`content/legal/{privacy,terms}.<code>.html`, and add the code to `languages` in
-`scripts/sync-app-content.mjs` (the app must ship that translation).
+Add it to `languages` in `content/site.js` (`code` is the URL segment, `tag` the language tag for
+`lang`/`hreflang`, e.g. `pt-br` / `pt-BR`), create `content/locales/<code>.js` and
+`content/legal/{privacy,terms,imprint}.<code>.html`, add its release notes to `content/releases.js`,
+and add the code to `languages` in `scripts/sync-app-content.mjs` (the app must ship that translation;
+map the code to the app's localization there if they differ). Until a language has its own device
+mockups (`public/images/devices/<code>/`) and App Store badge (`public/images/badges/app-store-<code>.svg`),
+its page shows the English ones.
 
 ## Deploying
 

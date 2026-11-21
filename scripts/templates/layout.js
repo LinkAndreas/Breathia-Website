@@ -1,8 +1,8 @@
 // The document shell shared by every page: head/SEO, navigation with language switcher, footer.
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { site } from '../../content/site.js';
-import { absolute, escapeHtml, languageName, languages, ogLocale, rel, routes } from './util.js';
+import { absolute, escapeHtml, languageName, languageShort, languages, languageTag, ogLocale, rel, routes } from './util.js';
 
 // The social preview image, with a hash of its content in the URL: the CDN and the networks that
 // show link previews cache it for days, so a changed image needs a new address to be seen.
@@ -14,9 +14,14 @@ const globeIcon =
 
 // Official, localized App Store badge (public/images/badges, from Apple's marketing artwork).
 // Per Apple's guidelines: the preferred black badge, unmodified and unanimated.
+// Languages without their own badge file yet show the English one.
+function badgeFile(lang) {
+  const file = `app-store-${lang}.svg`;
+  return existsSync(new URL(`../../public/images/badges/${file}`, import.meta.url)) ? file : `app-store-${languages[0]}.svg`;
+}
 const badgeRatio = Object.fromEntries(
   languages.map((lang) => {
-    const svg = readFileSync(new URL(`../../public/images/badges/app-store-${lang}.svg`, import.meta.url), 'utf8');
+    const svg = readFileSync(new URL(`../../public/images/badges/${badgeFile(lang)}`, import.meta.url), 'utf8');
     const [, , w, h] = svg.match(/viewBox="([^"]+)"/)[1].split(/\s+/).map(Number);
     return [lang, w / h];
   }),
@@ -26,7 +31,7 @@ const badgeRatio = Object.fromEntries(
 export function storeBadge(t, lang, { height = 48 } = {}) {
   const width = Math.round(height * badgeRatio[lang]);
   return `<div class="badges" style="--badge-h: ${height}px">
-              <a class="badge" href="${site.appStoreUrl}"><img src="/images/badges/app-store-${lang}.svg" width="${width}" height="${height}" alt="${t.common.appStoreBadge}" /></a>
+              <a class="badge" href="${site.appStoreUrl}"><img src="/images/badges/${badgeFile(lang)}" width="${width}" height="${height}" alt="${t.common.appStoreBadge}" /></a>
             </div>`;
 }
 
@@ -44,13 +49,13 @@ function languageSwitcher({ lang, page, dir, t, variant }) {
   const items = languages
     .map((code) => {
       const current = code === lang;
-      return `<li><a href="${rel(dir, routes[page](code))}" hreflang="${code}" lang="${code}" data-lang="${code}"${
+      return `<li><a href="${rel(dir, routes[page](code))}" hreflang="${languageTag(code)}" lang="${languageTag(code)}" data-lang="${code}"${
         current ? ' aria-current="page"' : ''
       }>${languageName(code)}</a></li>`;
     })
     .join('');
   return `<details class="lang lang--${variant}" data-lang-menu>
-    <summary aria-label="${t.common.chooseLanguage}: ${languageName(lang)}">${globeIcon}<span>${lang.toUpperCase()}</span></summary>
+    <summary aria-label="${t.common.chooseLanguage}: ${languageName(lang)}">${globeIcon}<span>${languageShort(lang)}</span></summary>
     <ul class="lang__menu" role="list">${items}</ul>
   </details>`;
 }
@@ -63,11 +68,11 @@ export function renderDocument({ lang, t, page, title, description, content, hea
   const section = (id) => (onHome ? `#${id}` : `${rel(dir, home)}#${id}`);
 
   const alternates = languages
-    .map((code) => `<link rel="alternate" hreflang="${code}" href="${absolute(routes[page](code))}" />`)
+    .map((code) => `<link rel="alternate" hreflang="${languageTag(code)}" href="${absolute(routes[page](code))}" />`)
     .join('\n    ');
 
   return `<!doctype html>
-<html lang="${lang}">
+<html lang="${languageTag(lang)}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -144,10 +149,12 @@ ${content}
           ${languageSwitcher({ lang, page, dir, t, variant: 'footer' })}
         </div>
         <nav class="footer__links" aria-label="${t.footer.label}">
+          <a href="${rel(dir, routes.versions(lang))}"${page === 'versions' ? ' aria-current="page"' : ''}>${t.footer.versions}</a>
           <a href="${rel(dir, routes.privacy(lang))}"${page === 'privacy' ? ' aria-current="page"' : ''}>${t.footer.privacy}</a>
           <a href="${rel(dir, routes.imprint(lang))}"${page === 'imprint' ? ' aria-current="page"' : ''}>${t.footer.imprint}</a>
           <a href="${rel(dir, routes.terms(lang))}"${page === 'terms' ? ' aria-current="page"' : ''}>${t.footer.terms}</a>
           <a href="mailto:${site.feedbackEmail}">${t.footer.feedback}</a>
+          <a href="${site.sourceUrl}" rel="noopener">${t.footer.source}</a>
         </nav>
         <p class="footer__disclaimer">${t.footer.disclaimer}</p>
         <p class="footer__copy">© ${new Date().getFullYear()} ${site.developer.name}</p>

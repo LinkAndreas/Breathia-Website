@@ -4,7 +4,7 @@ export default {
   meta: {
     title: 'Breathia — Respiración guiada con biofeedback cardiaco en directo',
     description:
-      'Breathia te guía por {count} técnicas de respiración en iPhone, iPad, Mac y Apple Watch, y te muestra en directo cómo responden tu frecuencia cardiaca y tu VFC con un sensor de frecuencia cardiaca Bluetooth como la Polar H10. Gratis, privada y sin cuenta.',
+      'Breathia te guía por {count} técnicas de respiración en iPhone, iPad, Mac y Apple Watch, y te muestra en directo cómo responden tu frecuencia cardiaca y tu VFC con un sensor de frecuencia cardiaca Bluetooth como el Polar H10. Gratis, privada y sin cuenta.',
     ogTitle: 'Breathia — Respira más despacio. Tu corazón te sigue.',
     ogDescription:
       'Respiración guiada con información en directo de tu frecuencia cardiaca y tu VFC. {count} técnicas para iPhone, iPad, Mac y Apple Watch.',
@@ -40,7 +40,7 @@ export default {
     secondary: 'Descubre cómo funciona',
     meta: 'Gratis · Sin cuenta · Con o sin sensor',
     phoneAlt:
-      'Una sesión de Breathia en iPhone: el círculo de respiración muestra «Inhala 2», ciclo 7 de la respiración de resonancia, sobre gráficas en directo de frecuencia cardiaca y VFC.',
+      'Una sesión de Breathia en iPhone: el círculo de respiración cuenta una exhalación de la respiración de resonancia, sobre una nota de que respiración y corazón están sincronizados y gráficas en directo de frecuencia cardiaca y VFC.',
   },
 
   glance: {
@@ -56,7 +56,7 @@ export default {
     title: 'Un círculo que respira contigo.',
     lede: 'El círculo crece cuando inhalas y se reduce cuando exhalas. El número del centro sube mientras inhalas y retienes, y baja al exhalar: siempre sabes en qué punto estás, incluso con los ojos entrecerrados.',
     ticks: [
-      '<strong>Señales hápticas y sonoras</strong> anuncian cada cambio de fase, así que puedes cerrar los ojos y simplemente dejarte guiar.',
+      '<strong>Señales hápticas y ocho sonidos tranquilos y naturales</strong> (del cuenco tibetano y las campanillas de viento a las olas del mar, al volumen que elijas) anuncian cada cambio de fase, así que puedes cerrar los ojos y simplemente dejarte guiar.',
       '<strong>Una breve cuenta atrás</strong> te prepara y te indica por dónde empezar.',
       '<strong>La pantalla se mantiene encendida</strong> mientras respiras. Si sales de la app, la sesión se pausa y el tiempo fuera no cuenta.',
     ],
@@ -70,7 +70,7 @@ export default {
     title: 'Mira cómo tu corazón se acompasa<br class="br-lg" /> a tu respiración.',
     lede: 'Ponte un sensor de frecuencia cardiaca Bluetooth y Breathia te mostrará cómo cambian tu frecuencia cardiaca y su variabilidad mientras respiras: en directo, latido a latido.',
     deviceAlt:
-      'Una sesión de respiración de resonancia en curso en iPhone: el círculo de respiración, el progreso de la sesión, la tendencia actual de la VFC y gráficas en directo de frecuencia cardiaca y VFC (RMSSD).',
+      'Una sesión de respiración de resonancia en curso en iPhone: el círculo de respiración, el progreso de la sesión, una nota de que respiración y corazón están sincronizados y gráficas en directo de frecuencia cardiaca y VFC (RMSSD).',
     cards: [
       {
         title: 'Frecuencia cardiaca y VFC en directo',
@@ -95,14 +95,14 @@ export default {
   sensors: {
     eyebrow: 'Sensores',
     title: 'Tu sensor, vinculado en segundos.<br class="br-lg" /> O respira sin él.',
-    recommended: 'Recomendada',
+    recommended: 'Recomendado',
     polarBody:
-      'La Polar H10 es un buen ejemplo. Envía tu frecuencia cardiaca y los intervalos RR latido a latido para una VFC precisa. Humedece los electrodos, ponte la correa y aparecerá en Breathia en pocos segundos.',
+      'El Polar H10 es un buen ejemplo. Envía tu frecuencia cardiaca y los intervalos RR latido a latido para una VFC precisa. Humedece los electrodos, ponte la correa y aparecerá en Breathia en pocos segundos.',
     bleTitle: 'Cualquier sensor de frecuencia cardiaca Bluetooth',
     bleBody:
       'Cualquier correa pectoral o brazalete que use el servicio Bluetooth estándar de frecuencia cardiaca se vincula igual y muestra tu frecuencia cardiaca. Para la VFC, también tiene que enviar intervalos RR, como hacen las correas pectorales.',
     watchTitle: 'Apple Watch',
-    watchBody: 'Apple Watch mide tu frecuencia cardiaca durante la sesión, sin necesidad de sensor.',
+    watchBody: 'El Apple Watch mide tu frecuencia cardiaca durante la sesión, sin necesidad de sensor.',
     noneTitle: '¿Sin sensor? Sin problema.',
     noneBody:
       'Todas las técnicas funcionan sin sensor, y cada sesión sigue contando para tu historial y tus minutos de atención plena.',
@@ -126,8 +126,8 @@ export default {
       },
       {
         title: 'Mira qué ha cambiado',
-        body: 'Tu informe de sesión muestra tu frecuencia cardiaca al inicio, de media y al final, cómo ha evolucionado tu VFC y un breve resumen en palabras sencillas.',
-        alt: 'Un informe de sesión: frecuencia cardiaca 71 al inicio, 63 de media, 58 al final; RMSSD 52 ms, en aumento; y una nota de que la VFC subió a lo largo de la sesión.',
+        body: 'Tu informe de sesión muestra tu frecuencia cardiaca segundo a segundo, cómo subió y bajó con cada respiración y cómo evolucionó tu VFC, todo explicado con palabras sencillas.',
+        alt: 'Un informe de sesión: una nota de que la frecuencia cardiaca se calmó 16 LPM, de 71 a 55, con su media, mínimo y máximo, sobre una gráfica segundo a segundo.',
       },
     ],
   },
@@ -135,36 +135,36 @@ export default {
   library: {
     eyebrow: 'Biblioteca de técnicas',
     title: '{count} técnicas.<br />Todas explicadas.',
-    lede: 'De la respiración cuadrada y el suspiro fisiológico a la respiración de resonancia y la respiración alterna. De cada técnica descubrirás cómo funciona, cuándo ayuda más, cómo practicarla paso a paso y cuándo conviene tener cuidado.',
+    lede: 'De la respiración cuadrada y el suspiro fisiológico a la respiración de resonancia y la respiración por fosas alternas. De cada técnica descubrirás cómo funciona, cuándo ayuda más, cómo practicarla paso a paso y cuándo conviene tener cuidado.',
     phoneAlt:
-      'La página de la respiración de resonancia: inhalación de 5 segundos, exhalación de 5 segundos, sesión de 10 minutos, con las secciones Cómo funciona, Ideal para y Cómo practicarla.',
+      'La página de la respiración de resonancia: inhalación de 5 segundos, exhalación de 5 segundos, sesión de 10 minutos, con las secciones Cómo funciona, Ideal para y Cómo practicar.',
     filterLabel: 'Filtrar técnicas por categoría',
     fineprint:
       'No todas las técnicas son para todo el mundo. Cada una incluye una nota de seguridad: léela y para si no te encuentras bien.',
   },
 
   history: {
-    eyebrow: 'Historial y Apple Salud',
+    eyebrow: 'Historial y Salud',
     title: 'Cada sesión,<br />guardada.',
     lede: 'El historial guarda cada sesión, con sus tendencias de frecuencia cardiaca y VFC, directamente en tu dispositivo. Repasa la última semana o el último mes y descubre cómo evolucionan tu práctica y tu corazón.',
     ticks: [
-      '<strong>Minutos de atención plena en Apple Salud.</strong> Si quieres, cada sesión completada se guarda como minutos de atención plena. En iPhone, iPad y Mac, Breathia solo escribe en Apple Salud: nunca lee tus datos de salud.',
+      '<strong>Minutos de atención plena en la app Salud.</strong> Si quieres, cada sesión completada se guarda como minutos de atención plena. En iPhone, iPad y Mac, Breathia solo escribe en Salud: nunca lee tus datos de salud.',
       '<strong>Incluye las sesiones de Apple Watch.</strong> Las sesiones que hagas en Apple Watch aparecen en el historial del iPhone.',
     ],
     listAlt: 'La pestaña Historial con sesiones pasadas agrupadas en ayer, los últimos 7 días y los últimos 30 días.',
-    detailAlt: 'Un informe guardado de una sesión de respiración de resonancia con resúmenes de frecuencia cardiaca y VFC.',
+    detailAlt: 'Un informe guardado de una sesión de respiración de resonancia con una gráfica detallada de la frecuencia cardiaca.',
   },
 
   everywhere: {
     eyebrow: 'En todos tus dispositivos',
-    title: 'Donde sea que necesites respirar.',
+    title: 'Allí donde necesites respirar.',
     watchTitle: 'Apple Watch',
     watchBody: 'Respira desde tu muñeca con suaves vibraciones que te acompañan, mientras se mide tu frecuencia cardiaca. Las sesiones se sincronizan con el historial del iPhone.',
     watchListAlt: 'La lista de técnicas en Apple Watch.',
     watchSessionAlt: 'Una sesión en Apple Watch: Exhala 2, con la frecuencia cardiaca encima.',
     watchSummaryAlt: 'El resumen de una sesión en Apple Watch, que se sincroniza con el historial del iPhone.',
     liveTitle: 'Actividad en directo',
-    liveBody: 'Sigue tu sesión desde la pantalla de bloqueo y la Dynamic Island. Consulta el tiempo transcurrido y pausa o termina sin abrir la app.',
+    liveBody: 'Sigue tu sesión desde la pantalla bloqueada y la Dynamic Island. Consulta el tiempo transcurrido y pausa o termina sin abrir la app.',
     liveNote: 'Ilustración estilizada.',
     ipadTitle: 'iPad',
     ipadBody: 'En la pantalla grande, las técnicas y sus detalles aparecen uno junto al otro, con la misma compatibilidad con sensores Bluetooth que en iPhone.',
@@ -177,7 +177,7 @@ export default {
   privacy: {
     eyebrow: 'Privacidad',
     title: 'Tu respiración es solo asunto tuyo.',
-    lede: 'Breathia no tiene cuenta ni servidor. Tus mediciones de frecuencia cardiaca, tu VFC y tu historial de sesiones se quedan en tus dispositivos. Las sesiones solo llegan a Apple Salud si lo activas.',
+    lede: 'Breathia no tiene cuenta ni servidor. Tus mediciones de frecuencia cardiaca, tu VFC y tu historial de sesiones se quedan en tus dispositivos. Las sesiones solo llegan a la app Salud si lo activas.',
     pillars: [
       { title: 'En tu dispositivo', body: 'El historial y los ajustes se quedan en tus dispositivos. Si eliminas la app, sus datos se van con ella.' },
       { title: 'Sin cuenta', body: 'Abre la app y empieza a respirar. Sin registros ni inicios de sesión.' },
@@ -199,17 +199,26 @@ export default {
     iconAlt: 'Icono de la app Breathia',
     title: 'Respira hondo.<br />Y luego otra vez.',
     lede: 'Breathia es gratis en el App Store para iPhone, iPad, Mac y Apple Watch.',
-    meta: 'Disponible en español, English, Deutsch y Français',
+    meta: 'Disponible en 11 idiomas',
   },
 
   footer: {
     label: 'Información legal y contacto',
+    versions: 'Historial de versiones',
     privacy: 'Política de privacidad',
     imprint: 'Aviso legal',
     terms: 'Condiciones de uso',
     feedback: 'Enviar comentarios',
+    source: 'Código abierto',
     disclaimer:
       'Breathia es una app de bienestar, no un producto sanitario. No está concebida para diagnosticar ni tratar ninguna enfermedad. Polar y H10 son marcas de Polar Electro Oy. Apple, el logotipo de Apple, Apple Watch, iPad, iPhone, Mac, MacBook y App Store son marcas de Apple Inc., registradas en EE. UU. y en otros países.',
+  },
+
+  versions: {
+    title: 'Historial de versiones',
+    lede: 'Las novedades de cada versión de Breathia en el App Store.',
+    description: 'Todas las versiones de Breathia en el App Store y sus novedades, para iPhone, iPad, Mac y Apple Watch.',
+    version: 'Versión',
   },
 
   legal: {

@@ -9,7 +9,14 @@ export const categories = [
       "en": "HRV & Coherence",
       "de": "HRV & Kohärenz",
       "fr": "VFC et cohérence",
-      "es": "VFC y coherencia"
+      "es": "VFC y coherencia",
+      "it": "HRV e coerenza",
+      "pt-br": "VFC e coerência",
+      "nl": "HRV en coherentie",
+      "ja": "HRVとコヒーレンス",
+      "ko": "HRV와 코히어런스",
+      "zh": "HRV 与协调",
+      "ru": "ВСР и когерентность"
     }
   },
   {
@@ -18,7 +25,14 @@ export const categories = [
       "en": "Calm",
       "de": "Ruhe",
       "fr": "Calme",
-      "es": "Calma"
+      "es": "Calma",
+      "it": "Calma",
+      "pt-br": "Calma",
+      "nl": "Rust",
+      "ja": "落ち着き",
+      "ko": "안정",
+      "zh": "平静",
+      "ru": "Спокойствие"
     }
   },
   {
@@ -27,7 +41,14 @@ export const categories = [
       "en": "Stress Relief",
       "de": "Stressabbau",
       "fr": "Anti-stress",
-      "es": "Alivio del estrés"
+      "es": "Alivio del estrés",
+      "it": "Antistress",
+      "pt-br": "Alívio do estresse",
+      "nl": "Stressverlichting",
+      "ja": "ストレス解消",
+      "ko": "스트레스 해소",
+      "zh": "缓解压力",
+      "ru": "Снятие стресса"
     }
   },
   {
@@ -36,7 +57,14 @@ export const categories = [
       "en": "Sleep",
       "de": "Schlaf",
       "fr": "Sommeil",
-      "es": "Sueño"
+      "es": "Sueño",
+      "it": "Sonno",
+      "pt-br": "Sono",
+      "nl": "Slaap",
+      "ja": "睡眠",
+      "ko": "수면",
+      "zh": "睡眠",
+      "ru": "Сон"
     }
   },
   {
@@ -45,7 +73,14 @@ export const categories = [
       "en": "Focus & Performance",
       "de": "Fokus & Leistung",
       "fr": "Concentration et performance",
-      "es": "Concentración y rendimiento"
+      "es": "Concentración y rendimiento",
+      "it": "Concentrazione e prestazioni",
+      "pt-br": "Foco e desempenho",
+      "nl": "Focus en prestaties",
+      "ja": "集中とパフォーマンス",
+      "ko": "집중과 퍼포먼스",
+      "zh": "专注与表现",
+      "ru": "Фокус и продуктивность"
     }
   },
   {
@@ -54,7 +89,14 @@ export const categories = [
       "en": "Energy",
       "de": "Energie",
       "fr": "Énergie",
-      "es": "Energía"
+      "es": "Energía",
+      "it": "Energia",
+      "pt-br": "Energia",
+      "nl": "Energie",
+      "ja": "エネルギー",
+      "ko": "활력",
+      "zh": "活力",
+      "ru": "Энергия"
     }
   },
   {
@@ -63,7 +105,14 @@ export const categories = [
       "en": "Foundations",
       "de": "Grundlagen",
       "fr": "Fondamentaux",
-      "es": "Fundamentos"
+      "es": "Fundamentos",
+      "it": "Basi",
+      "pt-br": "Fundamentos",
+      "nl": "Basis",
+      "ja": "基本",
+      "ko": "기초",
+      "zh": "基础",
+      "ru": "Основы"
     }
   }
 ];
@@ -74,29 +123,32 @@ export const techniques = [
     "category": "hrv",
     "minutes": 10,
     "hue": 340,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 5,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 5,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Resonance Breathing",
       "de": "Resonanzatmung",
       "fr": "Respiration de résonance",
-      "es": "Respiración de resonancia"
+      "es": "Respiración de resonancia",
+      "it": "Respirazione di risonanza",
+      "pt-br": "Respiração de ressonância",
+      "nl": "Resonantieademhaling",
+      "ja": "共鳴呼吸",
+      "ko": "공명 호흡",
+      "zh": "共振呼吸",
+      "ru": "Резонансное дыхание"
     },
     "purpose": {
       "en": "Autonomic biofeedback",
       "de": "Autonomes Biofeedback",
       "fr": "Biofeedback autonome",
-      "es": "Biofeedback autonómico"
+      "es": "Biofeedback autonómico",
+      "it": "Biofeedback autonomico",
+      "pt-br": "Biofeedback autonômico",
+      "nl": "Autonome biofeedback",
+      "ja": "自律神経のバイオフィードバック",
+      "ko": "자율신경 바이오피드백",
+      "zh": "自主神经生物反馈",
+      "ru": "Вегетативная биообратная связь"
     }
   },
   {
@@ -104,29 +156,32 @@ export const techniques = [
     "category": "hrv",
     "minutes": 10,
     "hue": 328,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 6,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 6,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Coherent Breathing",
       "de": "Kohärente Atmung",
       "fr": "Respiration cohérente",
-      "es": "Respiración coherente"
+      "es": "Respiración coherente",
+      "it": "Respirazione coerente",
+      "pt-br": "Respiração coerente",
+      "nl": "Coherente ademhaling",
+      "ja": "コヒーレント呼吸",
+      "ko": "코히어런트 호흡",
+      "zh": "协调呼吸",
+      "ru": "Когерентное дыхание"
     },
     "purpose": {
       "en": "Deep HRV training",
       "de": "Intensives HRV-Training",
       "fr": "Entraînement approfondi de la VFC",
-      "es": "Entrenamiento profundo de la VFC"
+      "es": "Entrenamiento profundo de la VFC",
+      "it": "Allenamento HRV profondo",
+      "pt-br": "Treino profundo de VFC",
+      "nl": "Intensieve HRV-training",
+      "ja": "本格的なHRVトレーニング",
+      "ko": "깊이 있는 HRV 훈련",
+      "zh": "深度 HRV 训练",
+      "ru": "Глубокая тренировка ВСР"
     }
   },
   {
@@ -134,29 +189,32 @@ export const techniques = [
     "category": "hrv",
     "minutes": 5,
     "hue": 352,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 5,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 5,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Heart-Focused Breathing",
       "de": "Herzfokussierte Atmung",
       "fr": "Respiration centrée sur le cœur",
-      "es": "Respiración centrada en el corazón"
+      "es": "Respiración centrada en el corazón",
+      "it": "Respirazione focalizzata sul cuore",
+      "pt-br": "Respiração focada no coração",
+      "nl": "Hartgerichte ademhaling",
+      "ja": "ハートフォーカス呼吸",
+      "ko": "심장 집중 호흡",
+      "zh": "聚焦心脏呼吸",
+      "ru": "Дыхание с фокусом на сердце"
     },
     "purpose": {
       "en": "Emotional balance",
       "de": "Emotionale Balance",
       "fr": "Équilibre émotionnel",
-      "es": "Equilibrio emocional"
+      "es": "Equilibrio emocional",
+      "it": "Equilibrio emotivo",
+      "pt-br": "Equilíbrio emocional",
+      "nl": "Emotionele balans",
+      "ja": "感情のバランス",
+      "ko": "감정의 균형",
+      "zh": "情绪平衡",
+      "ru": "Эмоциональный баланс"
     }
   },
   {
@@ -164,29 +222,32 @@ export const techniques = [
     "category": "calm",
     "minutes": 6,
     "hue": 190,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 6,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Relaxing Breath",
       "de": "Entspannende Atmung",
       "fr": "Respiration relaxante",
-      "es": "Respiración relajante"
+      "es": "Respiración relajante",
+      "it": "Respiro rilassante",
+      "pt-br": "Respiração relaxante",
+      "nl": "Ontspannende ademhaling",
+      "ja": "リラックス呼吸",
+      "ko": "이완 호흡",
+      "zh": "放松呼吸",
+      "ru": "Расслабляющее дыхание"
     },
     "purpose": {
       "en": "Extended-exhale relaxation",
       "de": "Entspannung durch langes Ausatmen",
       "fr": "Relaxation par expiration prolongée",
-      "es": "Relajación con exhalación prolongada"
+      "es": "Relajación con exhalación prolongada",
+      "it": "Rilassamento con espirazione prolungata",
+      "pt-br": "Relaxamento com expiração prolongada",
+      "nl": "Ontspanning door langer uitademen",
+      "ja": "長い呼気によるリラックス",
+      "ko": "긴 날숨으로 하는 이완",
+      "zh": "延长呼气以放松",
+      "ru": "Расслабление удлинённым выдохом"
     }
   },
   {
@@ -194,29 +255,32 @@ export const techniques = [
     "category": "calm",
     "minutes": 5,
     "hue": 202,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 5,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 5,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Ocean Breath (Ujjayi)",
       "de": "Ozeanatmung (Ujjayi)",
       "fr": "Respiration océanique (Ujjayi)",
-      "es": "Respiración oceánica (Ujjayi)"
+      "es": "Respiración oceánica (Ujjayi)",
+      "it": "Respiro oceanico (Ujjayi)",
+      "pt-br": "Respiração oceânica (Ujjayi)",
+      "nl": "Oceaanademhaling (Ujjayi)",
+      "ja": "海の呼吸（ウジャイ）",
+      "ko": "바다 호흡(우짜이)",
+      "zh": "海浪呼吸（Ujjayi）",
+      "ru": "Дыхание океана (Уджайи)"
     },
     "purpose": {
       "en": "Calm and grounded focus",
       "de": "Ruhiger, geerdeter Fokus",
       "fr": "Concentration calme et ancrée",
-      "es": "Concentración serena y centrada"
+      "es": "Concentración serena y centrada",
+      "it": "Concentrazione calma e radicata",
+      "pt-br": "Foco calmo e centrado",
+      "nl": "Rustige, gegronde focus",
+      "ja": "穏やかで地に足のついた集中",
+      "ko": "차분하고 안정된 집중",
+      "zh": "平静、踏实的专注",
+      "ru": "Спокойная, заземлённая концентрация"
     }
   },
   {
@@ -224,29 +288,32 @@ export const techniques = [
     "category": "calm",
     "minutes": 5,
     "hue": 178,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 6,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Humming Bee Breath",
       "de": "Bienenatmung",
       "fr": "Respiration de l'abeille",
-      "es": "Respiración de la abeja"
+      "es": "Respiración de la abeja",
+      "it": "Respiro dell’ape",
+      "pt-br": "Respiração da abelha",
+      "nl": "Bijenademhaling",
+      "ja": "蜂の呼吸",
+      "ko": "벌 소리 호흡",
+      "zh": "蜂鸣呼吸",
+      "ru": "Дыхание «жужжащей пчелы»"
     },
     "purpose": {
       "en": "Calming, vagal stimulation",
       "de": "Beruhigung, Vagusstimulation",
       "fr": "Apaisement, stimulation vagale",
-      "es": "Calma, estimulación vagal"
+      "es": "Calma, estimulación vagal",
+      "it": "Calma, stimolazione vagale",
+      "pt-br": "Calma, estimulação vagal",
+      "nl": "Kalmerend, stimuleert de nervus vagus",
+      "ja": "鎮静と迷走神経の刺激",
+      "ko": "진정, 미주신경 자극",
+      "zh": "平静身心，刺激迷走神经",
+      "ru": "Успокоение, стимуляция блуждающего нерва"
     }
   },
   {
@@ -254,29 +321,32 @@ export const techniques = [
     "category": "calm",
     "minutes": 4,
     "hue": 214,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 6,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Cooling Breath (Sitali)",
       "de": "Kühlende Atmung (Sitali)",
       "fr": "Respiration rafraîchissante (Sitali)",
-      "es": "Respiración refrescante (Sitali)"
+      "es": "Respiración refrescante (Sitali)",
+      "it": "Respiro rinfrescante (Sitali)",
+      "pt-br": "Respiração refrescante (Sitali)",
+      "nl": "Verkoelende ademhaling (Sitali)",
+      "ja": "クーリング呼吸（シータリー）",
+      "ko": "냉각 호흡(시탈리)",
+      "zh": "清凉呼吸（Sitali）",
+      "ru": "Охлаждающее дыхание (Шитали)"
     },
     "purpose": {
       "en": "Cooling and soothing",
       "de": "Kühlend und beruhigend",
       "fr": "Rafraîchissante et apaisante",
-      "es": "Refrescante y relajante"
+      "es": "Refrescante y relajante",
+      "it": "Rinfrescante e lenitivo",
+      "pt-br": "Refrescante e calmante",
+      "nl": "Verkoelend en kalmerend",
+      "ja": "冷却と鎮静",
+      "ko": "몸을 식히고 진정하기",
+      "zh": "清凉舒缓",
+      "ru": "Охлаждение и успокоение"
     }
   },
   {
@@ -284,34 +354,32 @@ export const techniques = [
     "category": "stress",
     "minutes": 3,
     "hue": 150,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 2,
-        "scale": 1
-      },
-      {
-        "kind": "inhale",
-        "seconds": 1,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 6,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Physiological Sigh",
       "de": "Physiologischer Seufzer",
       "fr": "Soupir physiologique",
-      "es": "Suspiro fisiológico"
+      "es": "Suspiro fisiológico",
+      "it": "Sospiro fisiologico",
+      "pt-br": "Suspiro fisiológico",
+      "nl": "Fysiologische zucht",
+      "ja": "生理的ため息",
+      "ko": "생리적 한숨",
+      "zh": "生理性叹息",
+      "ru": "Физиологический вздох"
     },
     "purpose": {
       "en": "Rapid stress relief",
       "de": "Schneller Stressabbau",
       "fr": "Soulagement rapide du stress",
-      "es": "Alivio rápido del estrés"
+      "es": "Alivio rápido del estrés",
+      "it": "Sollievo rapido dallo stress",
+      "pt-br": "Alívio rápido do estresse",
+      "nl": "Snelle stressverlichting",
+      "ja": "すばやいストレス解消",
+      "ko": "빠른 스트레스 해소",
+      "zh": "快速缓解压力",
+      "ru": "Быстрое снятие стресса"
     }
   },
   {
@@ -319,29 +387,32 @@ export const techniques = [
     "category": "stress",
     "minutes": 5,
     "hue": 138,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 7,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 11,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "7-11 Breathing",
       "de": "7-11-Atmung",
       "fr": "Respiration 7-11",
-      "es": "Respiración 7-11"
+      "es": "Respiración 7-11",
+      "it": "Respirazione 7-11",
+      "pt-br": "Respiração 7-11",
+      "nl": "7-11-ademhaling",
+      "ja": "7-11呼吸法",
+      "ko": "7-11 호흡",
+      "zh": "7-11 呼吸法",
+      "ru": "Дыхание 7-11"
     },
     "purpose": {
       "en": "Easing anxiety",
       "de": "Angst lindern",
       "fr": "Apaiser l'anxiété",
-      "es": "Aliviar la ansiedad"
+      "es": "Aliviar la ansiedad",
+      "it": "Alleviare l’ansia",
+      "pt-br": "Aliviar a ansiedade",
+      "nl": "Angst verlichten",
+      "ja": "不安をやわらげる",
+      "ko": "불안 완화",
+      "zh": "缓解焦虑",
+      "ru": "Облегчение тревоги"
     }
   },
   {
@@ -349,29 +420,32 @@ export const techniques = [
     "category": "stress",
     "minutes": 2,
     "hue": 162,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 3,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Lion's Breath",
       "de": "Löwenatmung",
       "fr": "Respiration du lion",
-      "es": "Respiración del león"
+      "es": "Respiración del león",
+      "it": "Respiro del leone",
+      "pt-br": "Respiração do leão",
+      "nl": "Leeuwenademhaling",
+      "ja": "ライオンの呼吸",
+      "ko": "사자 호흡",
+      "zh": "狮子式呼吸",
+      "ru": "Дыхание льва"
     },
     "purpose": {
       "en": "Releasing tension",
       "de": "Spannungen lösen",
       "fr": "Relâcher les tensions",
-      "es": "Liberar tensión"
+      "es": "Liberar tensión",
+      "it": "Sciogliere la tensione",
+      "pt-br": "Liberar a tensão",
+      "nl": "Spanning loslaten",
+      "ja": "緊張をほぐす",
+      "ko": "긴장 풀기",
+      "zh": "释放紧张",
+      "ru": "Снятие напряжения"
     }
   },
   {
@@ -379,34 +453,32 @@ export const techniques = [
     "category": "sleep",
     "minutes": 4,
     "hue": 285,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
-        "kind": "hold",
-        "seconds": 7,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 8,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "4-7-8 Breathing",
       "de": "4-7-8-Atmung",
       "fr": "Respiration 4-7-8",
-      "es": "Respiración 4-7-8"
+      "es": "Respiración 4-7-8",
+      "it": "Respirazione 4-7-8",
+      "pt-br": "Respiração 4-7-8",
+      "nl": "4-7-8-ademhaling",
+      "ja": "4-7-8呼吸法",
+      "ko": "4-7-8 호흡",
+      "zh": "4-7-8 呼吸法",
+      "ru": "Дыхание 4-7-8"
     },
     "purpose": {
       "en": "Relaxation before sleep",
       "de": "Entspannung vor dem Schlafen",
       "fr": "Relaxation avant le sommeil",
-      "es": "Relajación antes de dormir"
+      "es": "Relajación antes de dormir",
+      "it": "Rilassamento prima del sonno",
+      "pt-br": "Relaxamento antes de dormir",
+      "nl": "Ontspanning voor het slapengaan",
+      "ja": "眠る前のリラックス",
+      "ko": "잠들기 전 이완",
+      "zh": "睡前放松",
+      "ru": "Расслабление перед сном"
     }
   },
   {
@@ -414,29 +486,32 @@ export const techniques = [
     "category": "sleep",
     "minutes": 6,
     "hue": 297,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 8,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "2:1 Breathing",
       "de": "2:1-Atmung",
       "fr": "Respiration 2:1",
-      "es": "Respiración 2:1"
+      "es": "Respiración 2:1",
+      "it": "Respirazione 2:1",
+      "pt-br": "Respiração 2:1",
+      "nl": "2:1-ademhaling",
+      "ja": "2:1呼吸法",
+      "ko": "2:1 호흡",
+      "zh": "2:1 呼吸法",
+      "ru": "Дыхание 2:1"
     },
     "purpose": {
       "en": "Falling asleep",
       "de": "Einschlafen",
       "fr": "Endormissement",
-      "es": "Conciliar el sueño"
+      "es": "Conciliar el sueño",
+      "it": "Addormentarsi",
+      "pt-br": "Pegar no sono",
+      "nl": "In slaap vallen",
+      "ja": "寝つきをよくする",
+      "ko": "잠들기",
+      "zh": "帮助入睡",
+      "ru": "Засыпание"
     }
   },
   {
@@ -444,29 +519,32 @@ export const techniques = [
     "category": "sleep",
     "minutes": 5,
     "hue": 273,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 6,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Moon Breath (Chandra Bhedana)",
       "de": "Mondatmung (Chandra Bhedana)",
       "fr": "Respiration lunaire (Chandra Bhedana)",
-      "es": "Respiración lunar (Chandra Bhedana)"
+      "es": "Respiración lunar (Chandra Bhedana)",
+      "it": "Respiro lunare (Chandra Bhedana)",
+      "pt-br": "Respiração lunar (Chandra Bhedana)",
+      "nl": "Maanademhaling (Chandra Bhedana)",
+      "ja": "月の呼吸（チャンドラ・ベーダナ）",
+      "ko": "달 호흡(찬드라 베다나)",
+      "zh": "月亮呼吸（Chandra Bhedana）",
+      "ru": "Лунное дыхание (Чандра Бхедана)"
     },
     "purpose": {
       "en": "Winding down",
       "de": "Zur Ruhe kommen",
       "fr": "Se détendre",
-      "es": "Relajarse"
+      "es": "Relajarse",
+      "it": "Rilassarsi",
+      "pt-br": "Desacelerar",
+      "nl": "Tot rust komen",
+      "ja": "心身を静める",
+      "ko": "하루 마무리",
+      "zh": "放松身心",
+      "ru": "Успокоение"
     }
   },
   {
@@ -476,22 +554,7 @@ export const techniques = [
     "hue": 28,
     "phases": [
       {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
-        "kind": "hold",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
         "kind": "exhale",
-        "seconds": 4,
-        "scale": 0.8
-      },
-      {
-        "kind": "hold",
         "seconds": 4,
         "scale": 0.8
       }
@@ -500,13 +563,27 @@ export const techniques = [
       "en": "Box Breathing",
       "de": "Box-Atmung",
       "fr": "Respiration carrée",
-      "es": "Respiración cuadrada"
+      "es": "Respiración cuadrada",
+      "it": "Respirazione quadrata",
+      "pt-br": "Respiração quadrada",
+      "nl": "Boxademhaling",
+      "ja": "ボックス呼吸",
+      "ko": "박스 호흡",
+      "zh": "箱式呼吸",
+      "ru": "Квадратное дыхание"
     },
     "purpose": {
       "en": "Calm focus",
       "de": "Ruhiger Fokus",
       "fr": "Concentration sereine",
-      "es": "Concentración serena"
+      "es": "Concentración serena",
+      "it": "Calma e concentrazione",
+      "pt-br": "Foco tranquilo",
+      "nl": "Rustige focus",
+      "ja": "落ち着いた集中",
+      "ko": "차분한 집중",
+      "zh": "平静专注",
+      "ru": "Спокойная сосредоточенность"
     }
   },
   {
@@ -515,16 +592,6 @@ export const techniques = [
     "minutes": 5,
     "hue": 40,
     "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
-        "kind": "hold",
-        "seconds": 4,
-        "scale": 1.15
-      },
       {
         "kind": "exhale",
         "seconds": 4,
@@ -535,13 +602,27 @@ export const techniques = [
       "en": "Triangle Breathing",
       "de": "Dreiecksatmung",
       "fr": "Respiration triangulaire",
-      "es": "Respiración triangular"
+      "es": "Respiración triangular",
+      "it": "Respirazione triangolare",
+      "pt-br": "Respiração triangular",
+      "nl": "Driehoeksademhaling",
+      "ja": "三角呼吸",
+      "ko": "삼각 호흡",
+      "zh": "三角呼吸",
+      "ru": "Треугольное дыхание"
     },
     "purpose": {
       "en": "Steady concentration",
       "de": "Beständige Konzentration",
       "fr": "Concentration stable",
-      "es": "Concentración estable"
+      "es": "Concentración estable",
+      "it": "Concentrazione costante",
+      "pt-br": "Concentração estável",
+      "nl": "Stabiele concentratie",
+      "ja": "安定した集中",
+      "ko": "꾸준한 집중",
+      "zh": "稳定专注",
+      "ru": "Устойчивая концентрация"
     }
   },
   {
@@ -551,19 +632,9 @@ export const techniques = [
     "hue": 16,
     "phases": [
       {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
         "kind": "hold",
         "seconds": 2,
         "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 4,
-        "scale": 0.8
       },
       {
         "kind": "hold",
@@ -575,13 +646,27 @@ export const techniques = [
       "en": "Alternate Nostril Breathing",
       "de": "Wechselatmung",
       "fr": "Respiration alternée",
-      "es": "Respiración por fosas alternas"
+      "es": "Respiración por fosas alternas",
+      "it": "Respirazione a narici alternate",
+      "pt-br": "Respiração de narinas alternadas",
+      "nl": "Afwisselende neusgatademhaling",
+      "ja": "片鼻交互呼吸",
+      "ko": "교호 호흡",
+      "zh": "交替鼻孔呼吸",
+      "ru": "Попеременное дыхание ноздрями"
     },
     "purpose": {
       "en": "Balance and focus",
       "de": "Balance und Fokus",
       "fr": "Équilibre et concentration",
-      "es": "Equilibrio y concentración"
+      "es": "Equilibrio y concentración",
+      "it": "Equilibrio e concentrazione",
+      "pt-br": "Equilíbrio e foco",
+      "nl": "Balans en focus",
+      "ja": "バランスと集中",
+      "ko": "균형과 집중",
+      "zh": "平衡与专注",
+      "ru": "Баланс и концентрация"
     }
   },
   {
@@ -589,34 +674,32 @@ export const techniques = [
     "category": "focus",
     "minutes": 5,
     "hue": 52,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 3,
-        "scale": 1.05
-      },
-      {
-        "kind": "exhale",
-        "seconds": 3,
-        "scale": 0.85
-      },
-      {
-        "kind": "hold",
-        "seconds": 4,
-        "scale": 0.85
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Buteyko Breathing",
       "de": "Buteyko-Atmung",
       "fr": "Respiration Buteyko",
-      "es": "Respiración Buteyko"
+      "es": "Respiración Buteyko",
+      "it": "Respirazione Buteyko",
+      "pt-br": "Respiração Buteyko",
+      "nl": "Buteyko-ademhaling",
+      "ja": "ブテイコ呼吸法",
+      "ko": "부테이코 호흡",
+      "zh": "布泰科呼吸法",
+      "ru": "Дыхание по Бутейко"
     },
     "purpose": {
       "en": "CO₂ tolerance, nasal breathing",
       "de": "CO₂-Toleranz, Nasenatmung",
       "fr": "Tolérance au CO₂, respiration nasale",
-      "es": "Tolerancia al CO₂, respiración nasal"
+      "es": "Tolerancia al CO₂, respiración nasal",
+      "it": "Tolleranza alla CO₂, respirazione nasale",
+      "pt-br": "Tolerância ao CO₂, respiração nasal",
+      "nl": "CO₂-tolerantie, neusademhaling",
+      "ja": "CO₂耐性と鼻呼吸",
+      "ko": "CO₂ 내성, 코 호흡",
+      "zh": "二氧化碳耐受力、鼻呼吸",
+      "ru": "Толерантность к CO₂, носовое дыхание"
     }
   },
   {
@@ -625,11 +708,6 @@ export const techniques = [
     "minutes": 3,
     "hue": 4,
     "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 3,
-        "scale": 1.15
-      },
       {
         "kind": "exhale",
         "seconds": 6,
@@ -640,13 +718,27 @@ export const techniques = [
       "en": "Recovery Breathing",
       "de": "Regenerationsatmung",
       "fr": "Respiration de récupération",
-      "es": "Respiración de recuperación"
+      "es": "Respiración de recuperación",
+      "it": "Respirazione di recupero",
+      "pt-br": "Respiração de recuperação",
+      "nl": "Herstelademhaling",
+      "ja": "リカバリー呼吸",
+      "ko": "회복 호흡",
+      "zh": "恢复呼吸",
+      "ru": "Восстанавливающее дыхание"
     },
     "purpose": {
       "en": "Post-workout recovery",
       "de": "Erholung nach dem Training",
       "fr": "Récupération après l'entraînement",
-      "es": "Recuperación tras el entrenamiento"
+      "es": "Recuperación tras el entrenamiento",
+      "it": "Recupero dopo l’allenamento",
+      "pt-br": "Recuperação pós-treino",
+      "nl": "Herstel na een workout",
+      "ja": "ワークアウト後の回復",
+      "ko": "운동 후 회복",
+      "zh": "运动后恢复",
+      "ru": "Восстановление после тренировки"
     }
   },
   {
@@ -654,29 +746,32 @@ export const techniques = [
     "category": "energy",
     "minutes": 4,
     "hue": 75,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 4,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Sun Breath (Surya Bhedana)",
       "de": "Sonnenatmung (Surya Bhedana)",
       "fr": "Respiration solaire (Surya Bhedana)",
-      "es": "Respiración solar (Surya Bhedana)"
+      "es": "Respiración solar (Surya Bhedana)",
+      "it": "Respiro solare (Surya Bhedana)",
+      "pt-br": "Respiração solar (Surya Bhedana)",
+      "nl": "Zonneademhaling (Surya Bhedana)",
+      "ja": "太陽の呼吸（スーリヤ・ベーダナ）",
+      "ko": "태양 호흡(수리야 베다나)",
+      "zh": "太阳呼吸（Surya Bhedana）",
+      "ru": "Солнечное дыхание (Сурья Бхедана)"
     },
     "purpose": {
       "en": "Gentle energy",
       "de": "Sanfte Energie",
       "fr": "Énergie douce",
-      "es": "Energía suave"
+      "es": "Energía suave",
+      "it": "Energia delicata",
+      "pt-br": "Energia suave",
+      "nl": "Zachte energie",
+      "ja": "穏やかな活力",
+      "ko": "부드러운 활력",
+      "zh": "温和提神",
+      "ru": "Мягкая бодрость"
     }
   },
   {
@@ -684,29 +779,32 @@ export const techniques = [
     "category": "energy",
     "minutes": 2,
     "hue": 88,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 1,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 1,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Bellows Breath (Bhastrika)",
       "de": "Blasebalgatmung (Bhastrika)",
       "fr": "Respiration du soufflet (Bhastrika)",
-      "es": "Respiración de fuelle (Bhastrika)"
+      "es": "Respiración de fuelle (Bhastrika)",
+      "it": "Respirazione a mantice (Bhastrika)",
+      "pt-br": "Respiração do fole (Bhastrika)",
+      "nl": "Blaasbalgademhaling (Bhastrika)",
+      "ja": "ふいご呼吸（バストリカ）",
+      "ko": "풀무 호흡(바스트리카)",
+      "zh": "风箱式呼吸（Bhastrika）",
+      "ru": "Дыхание «кузнечные мехи» (Бхастрика)"
     },
     "purpose": {
       "en": "Energizing",
       "de": "Belebend",
-      "fr": "Dynamisante",
-      "es": "Energizante"
+      "fr": "Regain d'énergie",
+      "es": "Energizante",
+      "it": "Energizzante",
+      "pt-br": "Energizante",
+      "nl": "Energiegevend",
+      "ja": "活力を高める",
+      "ko": "활력",
+      "zh": "提神",
+      "ru": "Бодрость"
     }
   },
   {
@@ -714,29 +812,32 @@ export const techniques = [
     "category": "foundations",
     "minutes": 6,
     "hue": 236,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 6,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 6,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Diaphragmatic Breathing",
       "de": "Zwerchfellatmung",
       "fr": "Respiration diaphragmatique",
-      "es": "Respiración diafragmática"
+      "es": "Respiración diafragmática",
+      "it": "Respirazione diaframmatica",
+      "pt-br": "Respiração diafragmática",
+      "nl": "Middenrifademhaling",
+      "ja": "横隔膜呼吸",
+      "ko": "횡격막 호흡",
+      "zh": "腹式呼吸",
+      "ru": "Диафрагмальное дыхание"
     },
     "purpose": {
       "en": "Foundational deep breathing",
       "de": "Grundlegende Tiefenatmung",
       "fr": "Respiration profonde de base",
-      "es": "Respiración profunda básica"
+      "es": "Respiración profunda básica",
+      "it": "Respirazione profonda di base",
+      "pt-br": "Respiração profunda básica",
+      "nl": "Basis voor diep ademen",
+      "ja": "基本の深呼吸",
+      "ko": "기초 심호흡",
+      "zh": "基础深呼吸",
+      "ru": "Базовое глубокое дыхание"
     }
   },
   {
@@ -745,11 +846,6 @@ export const techniques = [
     "minutes": 8,
     "hue": 248,
     "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 4,
-        "scale": 1.15
-      },
       {
         "kind": "exhale",
         "seconds": 4,
@@ -760,13 +856,27 @@ export const techniques = [
       "en": "Equal Breathing",
       "de": "Gleichmäßige Atmung",
       "fr": "Respiration égale",
-      "es": "Respiración igualada"
+      "es": "Respiración igualada",
+      "it": "Respirazione uniforme",
+      "pt-br": "Respiração igual",
+      "nl": "Gelijkmatige ademhaling",
+      "ja": "均等呼吸",
+      "ko": "균등 호흡",
+      "zh": "等长呼吸",
+      "ru": "Равномерное дыхание"
     },
     "purpose": {
       "en": "Steady, balanced breathing",
       "de": "Gleichmäßige, ausgewogene Atmung",
       "fr": "Respiration régulière et équilibrée",
-      "es": "Respiración constante y equilibrada"
+      "es": "Respiración constante y equilibrada",
+      "it": "Respiro regolare ed equilibrato",
+      "pt-br": "Respiração constante e equilibrada",
+      "nl": "Rustig, evenwichtig ademen",
+      "ja": "安定したバランスのよい呼吸",
+      "ko": "일정하고 균형 잡힌 호흡",
+      "zh": "稳定、平衡的呼吸",
+      "ru": "Ровное, сбалансированное дыхание"
     }
   },
   {
@@ -774,39 +884,32 @@ export const techniques = [
     "category": "foundations",
     "minutes": 5,
     "hue": 260,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 2,
-        "scale": 0.92
-      },
-      {
-        "kind": "inhale",
-        "seconds": 2,
-        "scale": 1.03
-      },
-      {
-        "kind": "inhale",
-        "seconds": 2,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 6,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Three-Part Breath (Dirga)",
       "de": "Dreistufige Atmung (Dirga)",
       "fr": "Respiration en trois temps (Dirga)",
-      "es": "Respiración en tres partes (Dirga)"
+      "es": "Respiración en tres partes (Dirga)",
+      "it": "Respiro in tre parti (Dirga)",
+      "pt-br": "Respiração em três partes (Dirga)",
+      "nl": "Driedelige ademhaling (Dirga)",
+      "ja": "三段階呼吸（ディルガ）",
+      "ko": "3단 호흡(디르가)",
+      "zh": "三段式呼吸（Dirga）",
+      "ru": "Трёхчастное дыхание (Дирга)"
     },
     "purpose": {
       "en": "Full, mindful breathing",
       "de": "Volles, achtsames Atmen",
       "fr": "Une respiration complète et consciente",
-      "es": "Respiración completa y consciente"
+      "es": "Respiración completa y consciente",
+      "it": "Respiro pieno e consapevole",
+      "pt-br": "Respiração completa e consciente",
+      "nl": "Volledig, bewust ademen",
+      "ja": "深くマインドフルな呼吸",
+      "ko": "충만하고 의식적인 호흡",
+      "zh": "充分、正念的呼吸",
+      "ru": "Полное, осознанное дыхание"
     }
   },
   {
@@ -814,29 +917,32 @@ export const techniques = [
     "category": "foundations",
     "minutes": 3,
     "hue": 224,
-    "phases": [
-      {
-        "kind": "inhale",
-        "seconds": 2,
-        "scale": 1.15
-      },
-      {
-        "kind": "exhale",
-        "seconds": 4,
-        "scale": 0.8
-      }
-    ],
+    "phases": [],
     "name": {
       "en": "Pursed-Lip Breathing",
       "de": "Lippenbremse",
       "fr": "Respiration à lèvres pincées",
-      "es": "Respiración con labios fruncidos"
+      "es": "Respiración con labios fruncidos",
+      "it": "Respirazione a labbra socchiuse",
+      "pt-br": "Respiração com lábios semicerrados",
+      "nl": "Tuitlipademhaling",
+      "ja": "口すぼめ呼吸",
+      "ko": "입술 오므리기 호흡",
+      "zh": "缩唇呼吸",
+      "ru": "Дыхание через сомкнутые губы"
     },
     "purpose": {
       "en": "Controlled, easier breathing",
       "de": "Kontrolliertes, leichteres Atmen",
       "fr": "Une respiration contrôlée et plus facile",
-      "es": "Respiración controlada y más fácil"
+      "es": "Respiración controlada y más fácil",
+      "it": "Respiro controllato e più facile",
+      "pt-br": "Respiração controlada e mais fácil",
+      "nl": "Gecontroleerd, makkelijker ademen",
+      "ja": "コントロールされた楽な呼吸",
+      "ko": "조절된 편안한 호흡",
+      "zh": "可控、更轻松的呼吸",
+      "ru": "Контролируемое, более лёгкое дыхание"
     }
   }
 ];
@@ -846,54 +952,117 @@ export const appStrings = {
     "en": "All",
     "de": "Alle",
     "fr": "Toutes",
-    "es": "Todas"
+    "es": "Todas",
+    "it": "Tutte",
+    "pt-br": "Todas",
+    "nl": "Alle",
+    "ja": "すべて",
+    "ko": "전체",
+    "zh": "全部",
+    "ru": "Все"
   },
   "inhale": {
     "en": "Inhale",
     "de": "Einatmen",
-    "fr": "Inspirez",
-    "es": "Inhala"
+    "fr": "Inspire",
+    "es": "Inhala",
+    "it": "Inspira",
+    "pt-br": "Inspire",
+    "nl": "Inademen",
+    "ja": "吸う",
+    "ko": "들이쉬기",
+    "zh": "吸气",
+    "ru": "Вдох"
   },
   "exhale": {
     "en": "Exhale",
     "de": "Ausatmen",
-    "fr": "Expirez",
-    "es": "Exhala"
+    "fr": "Expire",
+    "es": "Exhala",
+    "it": "Espira",
+    "pt-br": "Expire",
+    "nl": "Uitademen",
+    "ja": "吐く",
+    "ko": "내쉬기",
+    "zh": "呼气",
+    "ru": "Выдох"
   },
   "hold": {
     "en": "Hold",
     "de": "Halten",
-    "fr": "Retenez",
-    "es": "Retén"
+    "fr": "Retiens",
+    "es": "Retén",
+    "it": "Trattieni",
+    "pt-br": "Segure",
+    "nl": "Vasthouden",
+    "ja": "止める",
+    "ko": "참기",
+    "zh": "屏息",
+    "ru": "Задержка"
   },
   "pause": {
     "en": "Pause",
     "de": "Pause",
     "fr": "Pause",
-    "es": "Pausa"
+    "es": "Pausa",
+    "it": "Pausa",
+    "pt-br": "Pausar",
+    "nl": "Pauzeer",
+    "ja": "一時停止",
+    "ko": "일시 정지",
+    "zh": "暂停",
+    "ru": "Пауза"
   },
   "resume": {
     "en": "Resume",
     "de": "Fortsetzen",
     "fr": "Reprendre",
-    "es": "Reanudar"
+    "es": "Reanudar",
+    "it": "Riprendi",
+    "pt-br": "Retomar",
+    "nl": "Hervat",
+    "ja": "再開",
+    "ko": "재개",
+    "zh": "继续",
+    "ru": "Продолжить"
   },
   "cycle": {
     "en": "Cycle {n}",
     "de": "Zyklus {n}",
     "fr": "Cycle {n}",
-    "es": "Ciclo {n}"
+    "es": "Ciclo {n}",
+    "it": "Ciclo {n}",
+    "pt-br": "Ciclo {n}",
+    "nl": "Cyclus {n}",
+    "ja": "サイクル {n}",
+    "ko": "주기 {n}",
+    "zh": "第 {n} 轮",
+    "ru": "Цикл {n}"
   },
   "minutes": {
     "en": "{n} min",
     "de": "{n} Min.",
     "fr": "{n} min",
-    "es": "{n} min"
+    "es": "{n} min",
+    "it": "{n} min",
+    "pt-br": "{n} min",
+    "nl": "{n} min",
+    "ja": "{n}分",
+    "ko": "{n}분",
+    "zh": "{n} 分钟",
+    "ru": "{n} мин"
   },
   "phaseLabel": {
     "en": "{n}s {s}",
     "de": "{n} s {s}",
     "fr": "{n} s {s}",
-    "es": "{n} s {s}"
+    "es": "{n} s {s}",
+    "it": "{n} s {s}",
+    "pt-br": "{n} s {s}",
+    "nl": "{n} s {s}",
+    "ja": "%2$@ %1$lld秒",
+    "ko": "{n}초 {s}",
+    "zh": "{n} 秒{s}",
+    "ru": "%2$@ %1$lld с"
   }
 };
