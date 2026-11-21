@@ -129,7 +129,9 @@ async function composite(bezelFile, area, screenshotFile, outBase, widths) {
 }
 
 if (bezelDir) {
-  for (const lang of languages) await mkdir(path.join(devicesOut, lang), { recursive: true });
+  for (const lang of languages) {
+    if (lang === languages[0] || existsSync(path.join(screensIn, lang))) await mkdir(path.join(devicesOut, lang), { recursive: true });
+  }
   // Devices whose bezel isn't mounted keep their existing mockups and manifest entry.
   const manifestFile = path.join(root, 'content/devices.json');
   const previous = existsSync(manifestFile) ? JSON.parse(await readFile(manifestFile, 'utf8')) : {};
@@ -144,6 +146,8 @@ if (bezelDir) {
     manifest[kind] = { width: area.bounds.width, height: area.bounds.height, widths: device.widths };
     for (const lang of languages) {
       const screens = lang === languages[0] ? screensIn : path.join(screensIn, lang);
+      // Languages without their own screenshots show the default language's mockups.
+      if (!existsSync(screens)) continue;
       for (const name of device.screens) {
         for (const scheme of device.schemes ?? ['light', 'dark']) {
           const suffix = scheme ? `-${scheme}` : '';
