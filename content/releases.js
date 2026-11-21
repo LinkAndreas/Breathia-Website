@@ -3,6 +3,56 @@
 
 export const releases = [
   {
+    version: '1.8.3',
+    date: '2026-11',
+    notes: {
+      en: [
+        'A new Version History in Settings lists every release of Breathia with what it brought.',
+        'Breathia now speaks eleven languages — new: Italian, Portuguese (Brazil), Dutch, Japanese, Korean, Chinese (Simplified) and Russian.',
+      ],
+      de: [
+        'Neue Versionshistorie in den Einstellungen: alle Versionen von Breathia und was sie jeweils gebracht haben.',
+        'Breathia spricht jetzt elf Sprachen – neu: Italienisch, Portugiesisch (Brasilien), Niederländisch, Japanisch, Koreanisch, Chinesisch (vereinfacht) und Russisch.',
+      ],
+      fr: [
+        'Nouvel historique des versions dans les Réglages : toutes les versions de Breathia et ce que chacune a apporté.',
+        'Breathia parle désormais onze langues. Nouveautés : italien, portugais du Brésil, néerlandais, japonais, coréen, chinois simplifié et russe.',
+      ],
+      es: [
+        'Nuevo Historial de versiones en Ajustes: todas las versiones de Breathia y lo que trajo cada una.',
+        'Breathia ahora habla once idiomas. Nuevos: italiano, portugués (Brasil), neerlandés, japonés, coreano, chino simplificado y ruso.',
+      ],
+      it: [
+        'Nuova Cronologia versioni in Impostazioni: tutte le versioni di Breathia e le novità di ciascuna.',
+        'Breathia ora parla undici lingue – le novità: italiano, portoghese (Brasile), olandese, giapponese, coreano, cinese semplificato e russo.',
+      ],
+      'pt-br': [
+        'Novo Histórico de versões nos Ajustes: todas as versões do Breathia e o que cada uma trouxe.',
+        'O Breathia agora fala onze idiomas — novos: italiano, português (Brasil), holandês, japonês, coreano, chinês simplificado e russo.',
+      ],
+      nl: [
+        'Nieuwe Versiegeschiedenis in Instellingen: alle versies van Breathia en wat elke versie bracht.',
+        'Breathia spreekt nu elf talen – nieuw: Italiaans, Portugees (Brazilië), Nederlands, Japans, Koreaans, Chinees (vereenvoudigd) en Russisch.',
+      ],
+      ja: [
+        '「設定」に新しく「バージョン履歴」を追加：Breathiaのすべてのバージョンと、それぞれの新機能を確認できます。',
+        'Breathiaが11の言語に対応しました。新たにイタリア語、ポルトガル語（ブラジル）、オランダ語、日本語、韓国語、中国語（簡体字）、ロシア語が加わりました。',
+      ],
+      ko: [
+        '설정에 새로운 버전 기록이 추가되어 Breathia의 모든 버전과 각 버전에서 달라진 점을 볼 수 있어요.',
+        '이제 Breathia를 11개 언어로 사용할 수 있어요. 이탈리아어, 포르투갈어(브라질), 네덜란드어, 일본어, 한국어, 중국어(간체), 러시아어가 새로 추가되었어요.',
+      ],
+      zh: [
+        '“设置”中新增“版本历史”，列出 Breathia 的每个版本及其带来的变化。',
+        'Breathia 现已支持十一种语言，新增意大利语、葡萄牙语（巴西）、荷兰语、日语、韩语、简体中文和俄语。',
+      ],
+      ru: [
+        'Новая «История версий» в Настройках: все версии Breathia и что нового было в каждой.',
+        'Breathia теперь говорит на одиннадцати языках — новые: итальянский, португальский (Бразилия), нидерландский, японский, корейский, китайский (упрощённый) и русский.',
+      ],
+    },
+  },
+  {
     version: '1.8.2',
     date: '2026-11',
     notes: {
