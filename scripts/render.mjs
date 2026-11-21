@@ -7,7 +7,8 @@ import { fileURLToPath } from 'node:url';
 import { site } from '../content/site.js';
 import { renderHome } from './templates/home.js';
 import { renderLanguageRedirect, renderLegal } from './templates/legal.js';
-import { languages, routes } from './templates/util.js';
+import { renderVersions } from './templates/versions.js';
+import { languages, languageTag, routes } from './templates/util.js';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const out = path.join(root, 'site');
@@ -33,7 +34,7 @@ const mapStrings = (value, fn) =>
 for (const lang of languages) locales[lang] = mapStrings(locales[lang], (text) => typeset(lang, text));
 
 // Start clean, so pages removed from the templates don't linger.
-for (const dir of [...languages.filter((l) => l !== languages[0]), 'privacy', 'termsofuse', 'imprint']) {
+for (const dir of [...languages.filter((l) => l !== languages[0]), 'privacy', 'termsofuse', 'imprint', 'versions']) {
   await rm(path.join(out, dir), { recursive: true, force: true });
 }
 
@@ -54,11 +55,13 @@ for (const lang of languages) {
     const body = typeset(lang, await readFile(path.join(root, `content/legal/${doc}.${lang}.html`), 'utf8'));
     await write(routes[page](lang), renderLegal(page, lang, t, body));
   }
+  await write(routes.versions(lang), renderVersions(lang, t, (text) => typeset(lang, text)));
 }
 
 await writeRedirect('privacy');
 await writeRedirect('terms');
 await writeRedirect('imprint');
+await writeRedirect('versions');
 
 async function writeRedirect(page) {
   const dir = routes[page](languages[0]).replace(/[^/]+\/$/, '');
@@ -68,11 +71,11 @@ async function writeRedirect(page) {
 }
 
 // Sitemap with hreflang alternates for every localized page.
-const groups = ['home', 'privacy', 'terms', 'imprint'];
+const groups = ['home', 'versions', 'privacy', 'terms', 'imprint'];
 const urls = groups.flatMap((page) =>
   languages.map((lang) => {
     const alternates = languages
-      .map((code) => `    <xhtml:link rel="alternate" hreflang="${code}" href="${site.url}${routes[page](code)}" />`)
+      .map((code) => `    <xhtml:link rel="alternate" hreflang="${languageTag(code)}" href="${site.url}${routes[page](code)}" />`)
       .join('\n');
     return `  <url>\n    <loc>${site.url}${routes[page](lang)}</loc>\n${alternates}\n  </url>`;
   }),

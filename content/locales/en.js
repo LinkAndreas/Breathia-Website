@@ -41,7 +41,7 @@ export default {
     secondary: 'See how it works',
     meta: 'Free · No account · Works with or without a sensor',
     phoneAlt:
-      'A Breathia session on iPhone: a breathing circle reads Inhale 2, cycle 7 of Resonance Breathing, above live heart-rate and HRV charts.',
+      'A Breathia session on iPhone: the breathing circle counts down an exhale of Resonance Breathing, above a note that breath and heart are in sync and live heart-rate and HRV charts.',
   },
 
   glance: {
@@ -57,7 +57,7 @@ export default {
     title: 'A circle that breathes with you.',
     lede: 'The circle grows as you breathe in and shrinks as you breathe out. The count in the middle rises while you inhale and hold, and falls as you exhale — so you always know where you are, even with your eyes half closed.',
     ticks: [
-      '<strong>Haptic and sound cues</strong> mark every change of phase, so you can close your eyes and simply follow along.',
+      '<strong>Haptic cues and eight calm, natural sounds</strong> — from singing bowls and wind chimes to ocean waves, at a volume you set — mark every change of phase, so you can close your eyes and simply follow along.',
       '<strong>A short countdown</strong> gets you ready and shows what comes first.',
       '<strong>The screen stays on</strong> while you breathe. Leave the app and your session pauses, so time away doesn’t count.',
     ],
@@ -71,7 +71,7 @@ export default {
     title: 'See your heart settle<br class="br-lg" /> into your breathing.',
     lede: 'Wear a Bluetooth heart-rate sensor, and Breathia shows how your heart rate and heart-rate variability change as you breathe — live, beat by beat.',
     deviceAlt:
-      'A live Resonance Breathing session on iPhone: the breathing circle, session progress, the current HRV trend, and live heart-rate and HRV (RMSSD) charts.',
+      'A live Resonance Breathing session on iPhone: the breathing circle, session progress, a note that breath and heart are in sync, and live heart-rate and HRV (RMSSD) charts.',
     cards: [
       {
         title: 'Heart rate and HRV, live',
@@ -127,8 +127,8 @@ export default {
       },
       {
         title: 'See what changed',
-        body: 'Your session report shows your heart rate at the start, on average and at the end, how your HRV developed, and a short summary in plain words.',
-        alt: 'A session report: heart rate 71 at start, 63 average, 58 at the end; RMSSD 52 ms, increasing; and a note that HRV rose as the session went on.',
+        body: 'Your session report charts your heart rate second by second, how it rose and fell with each breath, and how your HRV developed — each explained in plain words.',
+        alt: 'A session report: a note that the heart rate settled by 16 BPM, from 71 to 55, with its average, lowest and highest, above a second-by-second heart-rate chart.',
       },
     ],
   },
@@ -153,7 +153,7 @@ export default {
       '<strong>Apple Watch sessions included.</strong> Sessions from Apple Watch appear in History on iPhone.',
     ],
     listAlt: 'The History tab listing past breathing sessions, grouped into yesterday, the previous 7 days and the previous 30 days.',
-    detailAlt: 'A saved session report for Resonance Breathing with heart-rate and HRV summaries.',
+    detailAlt: 'A saved session report for Resonance Breathing with a detailed heart-rate chart.',
   },
 
   everywhere: {
@@ -200,17 +200,25 @@ export default {
     iconAlt: 'Breathia app icon',
     title: 'Take a breath.<br />Then take another.',
     lede: 'Breathia is free on the App Store for iPhone, iPad, Mac and Apple Watch.',
-    meta: 'Available in English, Deutsch, Español and Français',
+    meta: 'Available in 11 languages',
   },
 
   footer: {
     label: 'Legal and contact',
+    versions: 'Version History',
     privacy: 'Privacy Policy',
     imprint: 'Legal Notice',
     terms: 'Terms of Use',
     feedback: 'Send Feedback',
     disclaimer:
       'Breathia is a wellness app, not a medical device. It isn’t intended to diagnose or treat any condition. Polar and H10 are trademarks of Polar Electro Oy. Apple, the Apple logo, Apple Watch, iPad, iPhone, Mac, MacBook and App Store are trademarks of Apple Inc., registered in the U.S. and other countries.',
+  },
+
+  versions: {
+    title: 'Version history',
+    lede: 'What’s new in each version of Breathia on the App Store.',
+    description: 'Every Breathia release on the App Store and what it brought — for iPhone, iPad, Mac and Apple Watch.',
+    version: 'Version',
   },
 
   legal: {
