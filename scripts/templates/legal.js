@@ -1,7 +1,7 @@
 // Privacy Policy, Terms of Use and Legal Notice (Impressum), rendered from content/legal/<doc>.<lang>.html.
 import { site } from '../../content/site.js';
 import { renderDocument } from './layout.js';
-import { escapeHtml, languageName, languages, rel, routes } from './util.js';
+import { escapeHtml, languageName, languages, languageTag, preferredLanguagesScript, rel, routes } from './util.js';
 
 /** Name and postal address of the developer, one line each. */
 function developerAddressLines() {
@@ -29,7 +29,7 @@ function tableOfContents(html) {
 export function renderLegal(page, lang, t, body) {
   const dir = routes[page](lang);
   const [title, description] = pageText[page](t);
-  const date = new Intl.DateTimeFormat(lang, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(site.legalEffectiveDate));
+  const date = new Intl.DateTimeFormat(languageTag(lang), { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(site.legalEffectiveDate));
 
   const html = body
     .replaceAll('{{developerName}}', escapeHtml(site.developer.name))
@@ -44,7 +44,7 @@ export function renderLegal(page, lang, t, body) {
 
   const others = languages
     .filter((code) => code !== lang)
-    .map((code) => `<a href="${rel(dir, routes[page](code))}" hreflang="${code}" lang="${code}" data-lang="${code}">${languageName(code)}</a>`)
+    .map((code) => `<a href="${rel(dir, routes[page](code))}" hreflang="${languageTag(code)}" lang="${languageTag(code)}" data-lang="${code}">${languageName(code)}</a>`)
     .join(' · ');
 
   const content = `
@@ -86,7 +86,7 @@ ${html}
 export function renderLanguageRedirect(page) {
   const fallback = routes[page](languages[0]).split('/').filter(Boolean).pop() + '/';
   const links = languages
-    .map((code) => `<li><a href="${code}/" hreflang="${code}" lang="${code}">${languageName(code)}</a></li>`)
+    .map((code) => `<li><a href="${code}/" hreflang="${languageTag(code)}" lang="${languageTag(code)}">${languageName(code)}</a></li>`)
     .join('');
   return `<!doctype html>
 <html lang="${languages[0]}">
@@ -99,7 +99,7 @@ export function renderLanguageRedirect(page) {
     <script>
       (function () {
         var supported = ${JSON.stringify(languages)};
-        var preferred = (navigator.languages || [navigator.language]).map(function (l) { return String(l).slice(0, 2).toLowerCase(); });
+        var preferred = ${preferredLanguagesScript()};
         var lang = '${languages[0]}';
         try { lang = localStorage.getItem('breathia.lang') || lang; } catch (e) {}
         for (var i = 0; i < preferred.length && lang === '${languages[0]}'; i++) {

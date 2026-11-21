@@ -1,11 +1,11 @@
 // The landing page, one per language.
 import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { site } from '../../content/site.js';
 import { appStrings, categories, techniques } from '../../content/app.js';
 import devices from '../../content/devices.json' with { type: 'json' };
 import { renderDocument, storeBadge } from './layout.js';
-import { escapeHtml, fill, rel, routes } from './util.js';
+import { escapeHtml, fill, languages, preferredLanguagesScript, rel, routes } from './util.js';
 
 // Techniques offered in the interactive breathing circle.
 const pacerTechniques = ['resonance', 'box', '478', 'sigh'];
@@ -39,6 +39,9 @@ function versioned(url) {
   return `${url}?v=${hash}`;
 }
 
+/** Languages without their own mockups (public/images/devices/<lang>/) show the English ones. */
+const mockupLanguage = (lang) => (existsSync(`${publicDir}/images/devices/${lang}`) ? lang : languages[0]);
+
 /**
  * A screenshot inside its real device bezel (composited by scripts/build-images.mjs), taken
  * from the app running in the page's language.
@@ -46,8 +49,9 @@ function versioned(url) {
  */
 function device(lang, kind, name, { alt, className = '', scheme = kind === 'watch' ? null : 'auto', eager = false }) {
   const { width, height, widths } = devices[kind];
-  const set = (suffix) => widths.map((w) => `${versioned(`/images/devices/${lang}/${name}${suffix}-${w}.webp`)} ${w}w`).join(', ');
-  const fallback = (suffix) => versioned(`/images/devices/${lang}/${name}${suffix}-${widths[0]}.webp`);
+  const folder = mockupLanguage(lang);
+  const set = (suffix) => widths.map((w) => `${versioned(`/images/devices/${folder}/${name}${suffix}-${w}.webp`)} ${w}w`).join(', ');
+  const fallback = (suffix) => versioned(`/images/devices/${folder}/${name}${suffix}-${widths[0]}.webp`);
   const loading = eager ? ' fetchpriority="high"' : ' loading="lazy"';
   const sizesAttr = deviceSizes[kind];
   const img = (suffix) =>
@@ -167,7 +171,7 @@ const languageRedirect = (dir) => `<script>
         try {
           if (localStorage.getItem('breathia.lang')) return;
           var supported = ${JSON.stringify(site.languages.map((l) => l.code).slice(1))};
-          var preferred = (navigator.languages || [navigator.language]).map(function (l) { return String(l).slice(0, 2).toLowerCase(); });
+          var preferred = ${preferredLanguagesScript()};
           for (var i = 0; i < preferred.length; i++) {
             if (preferred[i] === '${site.languages[0].code}') return;
             if (supported.indexOf(preferred[i]) !== -1) { location.replace('${dir}' + preferred[i] + '/' + location.hash); return; }
@@ -204,7 +208,7 @@ export function renderHome(lang, t) {
     url: site.url + dir,
     downloadUrl: site.appStoreUrl,
     image: `${site.url}og-image.png`,
-    inLanguage: site.languages.map((l) => l.code),
+    inLanguage: site.languages.map((l) => l.tag),
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     author: { '@type': 'Person', name: site.developer.name },
   };

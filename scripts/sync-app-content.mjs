@@ -10,7 +10,9 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const appRepo = path.resolve(process.env.BREATHIA_APP ?? path.join(root, '../../Swift/Breathia'));
-const languages = ['en', 'de', 'fr', 'es'];
+// Website language codes, and the app localization each one comes from where it differs.
+const languages = ['en', 'de', 'fr', 'es', 'it', 'pt-br', 'nl', 'ja', 'ko', 'zh', 'ru'];
+const appLocalization = { 'pt-br': 'pt-BR', zh: 'zh-Hans' };
 
 const catalogSource = await readFile(path.join(appRepo, 'Shared/Domain/Model/TechniqueCatalog.swift'), 'utf8');
 const { strings } = JSON.parse(await readFile(path.join(appRepo, 'Shared/Localizable.xcstrings'), 'utf8'));
@@ -20,7 +22,7 @@ function localized(key) {
   if (!entry) throw new Error(`Missing string "${key}" in Localizable.xcstrings`);
   return Object.fromEntries(
     languages.map((lang) => {
-      const value = entry.localizations?.[lang]?.stringUnit?.value;
+      const value = entry.localizations?.[appLocalization[lang] ?? lang]?.stringUnit?.value;
       if (!value) throw new Error(`Missing ${lang} translation for "${key}"`);
       return [lang, value];
     }),
