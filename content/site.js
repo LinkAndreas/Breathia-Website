@@ -10,6 +10,7 @@ export const site = {
   appStoreId,
   appStoreUrl: `https://apps.apple.com/app/id${appStoreId}`,
   feedbackEmail: 'feedback@linkandreas.de',
+  sourceUrl: 'https://github.com/LinkAndreas/Breathia',
   privacyEmail: 'privacy@linkandreas.de',
 
   /** The provider of the app, named in the legal pages. */

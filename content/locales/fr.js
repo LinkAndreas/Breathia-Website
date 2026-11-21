@@ -210,6 +210,7 @@ export default {
     imprint: 'Mentions légales',
     terms: 'Conditions d’utilisation',
     feedback: 'Envoyer un commentaire',
+    source: 'Open source',
     disclaimer:
       'Breathia est une app de bien-être, pas un dispositif médical. Elle n’est pas destinée à diagnostiquer ou à traiter une quelconque affection. Polar et H10 sont des marques de Polar Electro Oy. Apple, le logo Apple, Apple Watch, iPad, iPhone, Mac, MacBook et App Store sont des marques d’Apple Inc., déposées aux États-Unis et dans d’autres pays.',
   },

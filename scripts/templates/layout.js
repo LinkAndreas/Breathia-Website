@@ -154,6 +154,7 @@ ${content}
           <a href="${rel(dir, routes.imprint(lang))}"${page === 'imprint' ? ' aria-current="page"' : ''}>${t.footer.imprint}</a>
           <a href="${rel(dir, routes.terms(lang))}"${page === 'terms' ? ' aria-current="page"' : ''}>${t.footer.terms}</a>
           <a href="mailto:${site.feedbackEmail}">${t.footer.feedback}</a>
+          <a href="${site.sourceUrl}" rel="noopener">${t.footer.source}</a>
         </nav>
         <p class="footer__disclaimer">${t.footer.disclaimer}</p>
         <p class="footer__copy">© ${new Date().getFullYear()} ${site.developer.name}</p>

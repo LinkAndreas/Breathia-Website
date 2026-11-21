@@ -209,6 +209,7 @@ export default {
     imprint: '法律声明',
     terms: '使用条款',
     feedback: '发送反馈',
+    source: '开源',
     disclaimer:
       'Breathia 是一款健康辅助 App，并非医疗器械，不用于诊断或治疗任何疾病。Polar 和 H10 是 Polar Electro Oy 的商标。Apple、Apple 标志、Apple Watch、iPad、iPhone、Mac、MacBook 和 App Store 是 Apple Inc. 在美国和其他国家和地区注册的商标。',
   },

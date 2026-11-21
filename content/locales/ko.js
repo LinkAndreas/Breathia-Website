@@ -209,6 +209,7 @@ export default {
     imprint: '법적 고지',
     terms: '이용 약관',
     feedback: '피드백 보내기',
+    source: '오픈 소스',
     disclaimer:
       'Breathia는 웰니스 앱이며 의료기기가 아니에요. 질병을 진단하거나 치료하기 위한 것이 아니에요. Polar 및 H10은 Polar Electro Oy의 상표예요. Apple, Apple 로고, Apple Watch, iPad, iPhone, Mac, MacBook 및 App Store는 미국 및 기타 국가에서 등록된 Apple Inc.의 상표예요.',
   },
